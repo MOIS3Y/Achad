@@ -1,4 +1,6 @@
 local gears = require "gears"
 local beautiful = require "beautiful"
 
-beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme.lua")
+beautiful.init(
+  gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua"
+)

@@ -30,5 +30,11 @@ return gears.table.join(
       description = "run prompt",
       group = "launcher"
     }
+  ),
+  awful.key(
+    {modkey}, "m",
+    function ()
+      awful.spawn(apps.launcher.rofi)
+    end
   )
 )

@@ -21,7 +21,7 @@ return gears.table.join(
     }
   ),
   awful.key(
-    {modkey, "Shift"}, "c",
+    {modkey}, "w",
     function (c)
       c:kill()
     end,

@@ -7,6 +7,8 @@ local beautiful = require "beautiful"
 local gears = require "gears"
 local wibox = require "wibox"
 
+local dpi = beautiful.xresources.apply_dpi
+
 
 -- Signal function to execute when a new client appears.
 client.connect_signal(
@@ -23,6 +25,7 @@ client.connect_signal(
     end
   end
 )
+
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal(
@@ -45,11 +48,25 @@ client.connect_signal(
         end
       )
     )
-    awful.titlebar(c):setup {
-      { -- Left
-        awful.titlebar.widget.iconwidget(c),
-        buttons = buttons,
-        layout  = wibox.layout.fixed.horizontal
+    awful.titlebar(
+      c,
+      {
+        position = "top",
+        size = dpi(32),
+        font = beautiful.font_title,
+        bg = beautiful.transparent
+      }
+    ):setup {
+      {-- Left
+        {
+          awful.titlebar.widget.closebutton(c),
+          awful.titlebar.widget.minimizebutton(c),
+          awful.titlebar.widget.maximizedbutton(c),
+          spacing = dpi(7),
+          layout = wibox.layout.fixed.horizontal()
+        },
+        margins = dpi(8),
+        widget = wibox.container.margin
       },
       { -- Middle
         { -- Title
@@ -59,18 +76,12 @@ client.connect_signal(
         buttons = buttons,
         layout  = wibox.layout.flex.horizontal
       },
-      { -- Right
-        awful.titlebar.widget.floatingbutton (c),
-        awful.titlebar.widget.maximizedbutton(c),
-        awful.titlebar.widget.stickybutton   (c),
-        awful.titlebar.widget.ontopbutton    (c),
-        awful.titlebar.widget.closebutton    (c),
-        layout = wibox.layout.fixed.horizontal()
-      },
       layout = wibox.layout.align.horizontal
     }
   end
 )
+
+
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal(
   "mouse::enter",
@@ -78,15 +89,54 @@ client.connect_signal(
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
   end
 )
+
+
 client.connect_signal(
   "focus",
   function(c)
     c.border_color = beautiful.border_focus
   end
 )
+
+
 client.connect_signal(
   "unfocus",
   function(c)
     c.border_color = beautiful.border_normal
   end
 )
+
+-- Show titlebar only when window is floating
+-- https://www.reddit.com/r/awesomewm/comments/bki1md/show_titlebar_only_when_window_is_floating/
+client.connect_signal("property::floating", function(c)
+  local b = false;
+  if c.first_tag ~= nil then
+      b = c.first_tag.layout.name == "floating"
+  end
+  if c.floating or b then
+      awful.titlebar.show(c)
+  else
+      awful.titlebar.hide(c)
+  end
+end)
+
+
+client.connect_signal("manage", function(c)
+  if c.floating or c.first_tag.layout.name == "floating" then
+      awful.titlebar.show(c)
+  else
+      awful.titlebar.hide(c)
+  end
+end)
+
+
+tag.connect_signal("property::layout", function(t)
+  local clients = t:clients()
+  for _, c in pairs(clients) do
+      if c.floating or c.first_tag.layout.name == "floating" then
+          awful.titlebar.show(c)
+      else
+          awful.titlebar.hide(c)
+      end
+  end
+end)
