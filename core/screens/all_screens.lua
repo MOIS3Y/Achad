@@ -3,7 +3,7 @@ local beautiful = require "beautiful"
 local gears = require "gears"
 local wibox = require "wibox"
 
-local taglist_buttons = require "core.keybindings.buttons.tag_list"
+local buttons = require "core.keybindings.buttons"
 local mylauncher = require "ui.widgets.launcher"
 
 -- Keyboard map indicator and switcher
@@ -42,7 +42,7 @@ awful.screen.connect_for_each_screen(
     s.mytaglist = awful.widget.taglist {
       screen = s,
       filter = awful.widget.taglist.filter.all,
-      buttons = taglist_buttons
+      buttons = buttons.tag_list
     }
     -- Create the wibox
     s.mywibox = awful.wibar({position = "top", screen = s})
