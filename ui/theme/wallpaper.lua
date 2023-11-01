@@ -1,10 +1,15 @@
 -- █░█░█ ▄▀█ █░░ █░░ █▀█ ▄▀█ █▀█ █▀▀ █▀█ ▀
 -- ▀▄▀▄▀ █▀█ █▄▄ █▄▄ █▀▀ █▀█ █▀▀ ██▄ █▀▄ ▄
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+local beautiful = require "beautiful"
+local gears = require "gears"
 
 local path = require "ui.theme.path"
 
 
 return {
-    wallpaper = path.images .. "cat_leaves.png"
+    wallpaper = path.images .. "cat_leaves.png",
+    set_wallpaper = function (s)
+      gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+    end
 }

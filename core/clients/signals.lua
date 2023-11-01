@@ -123,9 +123,9 @@ end)
 
 client.connect_signal("manage", function(c)
   if c.floating or c.first_tag.layout.name == "floating" then
-      awful.titlebar.show(c)
+    awful.titlebar.show(c)
   else
-      awful.titlebar.hide(c)
+    awful.titlebar.hide(c)
   end
 end)
 
@@ -134,9 +134,9 @@ tag.connect_signal("property::layout", function(t)
   local clients = t:clients()
   for _, c in pairs(clients) do
       if c.floating or c.first_tag.layout.name == "floating" then
-          awful.titlebar.show(c)
+        awful.titlebar.show(c)
       else
-          awful.titlebar.hide(c)
+        awful.titlebar.hide(c)
       end
   end
 end)
