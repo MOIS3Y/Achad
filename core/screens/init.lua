@@ -4,7 +4,7 @@ local gears = require "gears"
 local wibox = require "wibox"
 
 local taglist_buttons = require "core.keybindings.buttons.tag_list"
-local mylauncher = require "core.launcher"
+local mylauncher = require "ui.widgets.launcher"
 
 -- Keyboard map indicator and switcher
 local mykeyboardlayout = awful.widget.keyboardlayout()

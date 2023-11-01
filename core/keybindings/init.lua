@@ -3,7 +3,7 @@ local gears = require "gears"
 
 local keys = require "core.keybindings.keys"
 
-local mymainmenu = require "core.launcher.main_menu"
+local menu = require "core.menu"
 
 
 root.keys(
@@ -22,7 +22,7 @@ root.buttons(
     awful.button(
       {}, 3,
       function ()
-        mymainmenu:toggle()
+        menu:toggle()
       end
     ),
     awful.button(

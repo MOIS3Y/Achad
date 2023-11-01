@@ -1,13 +1,13 @@
 local awful = require "awful"
 local beautiful = require "beautiful"
 
-local mymainmenu = require "core.launcher.main_menu"
+local menu = require "core.menu"
 
 
 local _M = awful.widget.launcher(
   {
     image = beautiful.awesome_icon,
-    menu = mymainmenu
+    menu = menu
   }
 )
 
