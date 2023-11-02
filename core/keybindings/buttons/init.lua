@@ -2,11 +2,10 @@
 -- █▄█ █▄█ ░█░ ░█░ █▄█ █░▀█ ▄█ ▄
 --  -- -- -- -- -- -- -- -- -- -
 
-local client = require "core.keybindings.buttons.clinet"
-local tag_list = require "core.keybindings.buttons.tag_list"
-
 
 return {
-  client = client,
-  tag_list = tag_list
+  client =   require "core.keybindings.buttons.clinet",
+  layoutbox = require "core.keybindings.buttons.layoutbox",
+  taglist = require "core.keybindings.buttons.taglist",
+  titlebar = require "core.keybindings.buttons.titlebar"
 }

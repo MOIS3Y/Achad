@@ -1,6 +1,10 @@
+-- █░█ █▀ █▀▀ █▀█   █ █▄░█ ▀█▀ █▀▀ █▀█ █▀▀ ▄▀█ █▀▀ █▀▀ ▀
+-- █▄█ ▄█ ██▄ █▀▄   █ █░▀█ ░█░ ██▄ █▀▄ █▀░ █▀█ █▄▄ ██▄ ▄
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+-- imports:
 local gears = require "gears"
 local beautiful = require "beautiful"
 
-beautiful.init(
-  gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua"
-)
+-- init current interface theme:
+beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua")

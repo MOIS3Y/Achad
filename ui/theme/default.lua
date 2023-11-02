@@ -5,10 +5,13 @@
 local xresources = require "beautiful.xresources"
 
 local color_scheme = require "ui.theme.color_scheme"
+local path = require "ui.theme.path"
 local font = require "ui.theme.font"
 
+local icon_path = path.icons
 local dpi = xresources.apply_dpi
 
+-- from ~/.Xresources:
 -- theme.color0 = "#1e1e2e"
 -- theme.color1 = "#f38ba8"
 -- theme.color2 = "#a6e3a1"
@@ -26,6 +29,7 @@ local dpi = xresources.apply_dpi
 -- theme.color14 = "#94e2d5"
 -- theme.color15 = "#f2f4f5"
 
+
 return {
   font = font.default,
   -- Background colors:
@@ -35,10 +39,10 @@ return {
   bg_minimize = color_scheme.base00,
   bg_systray  = color_scheme.base00,
   -- Foreground colors:
-  fg_normal   = color_scheme.base04,
+  fg_normal   = color_scheme.base05,
   fg_focus    = color_scheme.base0D,
   fg_urgent   = color_scheme.base08,
-  fg_minimize = color_scheme.base04,
+  fg_minimize = color_scheme.base05,
   -- Client colors:
   border_normal = color_scheme.base00,
   border_focus  = color_scheme.base0D,
@@ -47,5 +51,7 @@ return {
   useless_gap   = dpi(4),
   border_width  = dpi(1),
   -- Icon theme:
-  icon_theme = nil
+  icon_theme = nil,
+  -- OS logo:
+  os_logo = icon_path .. "logo/os.png"
 }

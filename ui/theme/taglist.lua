@@ -1,22 +1,29 @@
-local xresources = require "beautiful.xresources"
-local theme_assets = require "beautiful.theme_assets"
+-- ▀█▀ ▄▀█ █▀▀   █░░ █ █▀ ▀█▀ ▀
+-- ░█░ █▀█ █▄█   █▄▄ █ ▄█ ░█░ ▄
+-- -- -- -- -- -- -- -- -- -- -
 
-local color_scheme = require "ui.theme.color_scheme"
+local gears = require "gears"
 
-local dpi = xresources.apply_dpi
-
-
--- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local color = require "ui.theme.color_scheme"
+local font = require "ui.theme.font"
 
 
 return {
-  taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size,
-    color_scheme.base04
-  ),
-  taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size,
-    color_scheme.base04
-  )
+  -- Clolors:
+  taglist_fg_focus = color.base00,
+  taglist_bg_focus = color.base05,
+  taglist_fg_urgent = color.base00,
+  taglist_bg_urgent = color.base08,
+  taglist_bg_occupied = color.base0D,
+  taglist_fg_occupied = color.base00,
+  taglist_bg_empty = color.base01,
+  taglist_fg_empty = color.base05,
+  taglist_bg_volatile = color.base00,
+  taglist_fg_volatile = color.base0D,
+  --Properties:
+  taglist_disable_icon = true,
+  taglist_font = font.taglist,
+  taglist_spacing = 10,
+  --Shapes:
+  taglist_shape = function(cr,w,h) gears.shape.rounded_rect(cr,38, 25, 5) end,
 }

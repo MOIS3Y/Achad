@@ -2,25 +2,31 @@
 -- █▄▄ █▀█ ░█░ █▄█ █▄█ ░█░ ▄█ ▄
 -- -- -- -- -- -- -- -- -- -- -
 
+local gears = require "gears"
 local gfs = require "gears.filesystem"
-local themes_path = gfs.get_themes_dir()
+
+local default_colors = require "ui.theme.default"
+
+local fcn = default_colors.fg_normal  -- fg_normal color
+local tp = gfs.get_themes_dir()       -- theme path
+local gcrci = gears.color.recolor_image  -- recolor images func
 
 
 return {
-  layout_fairh = themes_path .. "default/layouts/fairhw.png",
-  layout_fairv = themes_path .. "default/layouts/fairvw.png",
-  layout_floating  = themes_path .. "default/layouts/floatingw.png",
-  layout_magnifier = themes_path .. "default/layouts/magnifierw.png",
-  layout_max = themes_path .. "default/layouts/maxw.png",
-  layout_fullscreen = themes_path .. "default/layouts/fullscreenw.png",
-  layout_tilebottom = themes_path .. "default/layouts/tilebottomw.png",
-  layout_tileleft   = themes_path .. "default/layouts/tileleftw.png",
-  layout_tile = themes_path .. "default/layouts/tilew.png",
-  layout_tiletop = themes_path .. "default/layouts/tiletopw.png",
-  layout_spiral  = themes_path .. "default/layouts/spiralw.png",
-  layout_dwindle = themes_path .. "default/layouts/dwindlew.png",
-  layout_cornernw = themes_path .. "default/layouts/cornernww.png",
-  layout_cornerne = themes_path .. "default/layouts/cornernew.png",
-  layout_cornersw = themes_path .. "default/layouts/cornersww.png",
-  layout_cornerse = themes_path .. "default/layouts/cornersew.png"
+  layout_fairh =      gcrci(tp .. "default/layouts/fairhw.png", fcn),
+  layout_fairv =      gcrci(tp .. "default/layouts/fairvw.png", fcn),
+  layout_floating  =  gcrci(tp .. "default/layouts/floatingw.png", fcn),
+  layout_magnifier =  gcrci(tp .. "default/layouts/magnifierw.png", fcn),
+  layout_max =        gcrci(tp .. "default/layouts/maxw.png", fcn),
+  layout_fullscreen = gcrci(tp .. "default/layouts/fullscreenw.png", fcn),
+  layout_tilebottom = gcrci(tp .. "default/layouts/tilebottomw.png", fcn),
+  layout_tileleft   = gcrci(tp .. "default/layouts/tileleftw.png", fcn),
+  layout_tile =       gcrci(tp .. "default/layouts/tilew.png", fcn),
+  layout_tiletop =    gcrci(tp .. "default/layouts/tiletopw.png", fcn),
+  layout_spiral  =    gcrci(tp .. "default/layouts/spiralw.png", fcn),
+  layout_dwindle =    gcrci(tp .. "default/layouts/dwindlew.png", fcn),
+  layout_cornernw =   gcrci(tp .. "default/layouts/cornernww.png", fcn),
+  layout_cornerne =   gcrci(tp .. "default/layouts/cornernew.png", fcn),
+  layout_cornersw =   gcrci(tp .. "default/layouts/cornersww.png", fcn),
+  layout_cornerse =   gcrci(tp .. "default/layouts/cornersew.png", fcn),
 }
