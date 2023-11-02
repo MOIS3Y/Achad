@@ -1,10 +1,11 @@
 local awful = require "awful"
 local beautiful = require "beautiful"
-local gears = require "gears"
 local wibox = require "wibox"
+
 
 local buttons = require "core.keybindings.buttons"
 local mylauncher = require "ui.widgets.launcher"
+local tags = require "core.tags"
 
 local dpi = beautiful.xresources.apply_dpi
 
@@ -18,14 +19,11 @@ local mytextclock = wibox.widget.textclock()
 
 awful.screen.connect_for_each_screen(
   function(s)
-    -- Wallpaper
+    -- Init wallpaper:
     beautiful.set_wallpaper(s)
-    -- Each screen has its own tag table.
-    awful.tag(
-      { " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " },
-      s,
-      awful.layout.layouts[1]
-    )
+
+    -- Init taglist for each screen:
+    tags.generate_tags(s)
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()

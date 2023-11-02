@@ -2,5 +2,5 @@
 -- ▄█ █▄▄ █▀▄ ██▄ ██▄ █░▀█ ▄█ ▄
 -- -- -- -- -- -- -- -- -- -- -
 
-require "core.screens.all_screens"
+require "core.screens.all"
 require "core.screens.signals"
