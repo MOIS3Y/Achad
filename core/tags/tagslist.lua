@@ -44,14 +44,14 @@ local generate_tags = function (s)  -- s as screen
   })
   awful.tag.add(" 6 ", {
     index              = 6,
-    layout             = awful.layout.suit.tile,
+    layout             = awful.layout.suit.floating,
     gap_single_client  = true,
     gap                = 4,
     screen             = s,
   })
   awful.tag.add(" 7 ", {
     index              = 7,
-    layout             = awful.layout.suit.tile,
+    layout             = awful.layout.suit.floating,
     gap_single_client  = true,
     gap                = 4,
     screen             = s,

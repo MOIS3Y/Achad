@@ -5,7 +5,7 @@
 local awful = require "awful"
 local gears = require "gears"
 
-local modkey = require "core.keybindings.modkey" 
+local modkey = require "core.keybindings.modkey"
 
 
 return gears.table.join(
