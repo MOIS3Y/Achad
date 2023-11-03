@@ -6,6 +6,7 @@
         "globals": [
             "awesome",
             "client",
+            "mouse",
             "screen",
             "root",
             "tag"
