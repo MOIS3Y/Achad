@@ -27,5 +27,7 @@ return {
   taglist_font         = font.taglist,
   taglist_spacing      = 10,
   --Shapes:
-  taglist_shape = function(cr,w,h) gears.shape.rounded_rect(cr,38, 25, 5) end
+  taglist_shape = function(cr, width, height )
+    gears.shape.rounded_rect(cr, width, height, 5)
+  end
 }
