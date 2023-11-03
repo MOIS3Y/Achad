@@ -20,7 +20,7 @@ local _M = {
   menu_border_color = color_scheme.base00,
   menu_fg_focus = color_scheme.base0D,
   menu_bg_focus = color_scheme.base00,
-  menu_fg_normal = color_scheme.base04,
+  menu_fg_normal = color_scheme.base05,
   menu_bg_normal = color_scheme.base00
 }
 
