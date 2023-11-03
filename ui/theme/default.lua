@@ -2,16 +2,18 @@
 -- █▄▀ ██▄ █▀░ █▀█ █▄█ █▄▄ ░█░ ▄
 -- -- -- -- -- -- -- -- -- -- --
 
+-- Imports:
 local xresources = require "beautiful.xresources"
 
 local color_scheme = require "ui.theme.color_scheme"
-local path = require "ui.theme.path"
-local font = require "ui.theme.font"
+local path         = require "ui.theme.path"
+local font         = require "ui.theme.font"
 
+-- Init vars:
 local icon_path = path.icons
 local dpi = xresources.apply_dpi
 
--- from ~/.Xresources:
+-- load from ~/.Xresources:
 -- theme.color0 = "#1e1e2e"
 -- theme.color1 = "#f38ba8"
 -- theme.color2 = "#a6e3a1"
@@ -29,7 +31,7 @@ local dpi = xresources.apply_dpi
 -- theme.color14 = "#94e2d5"
 -- theme.color15 = "#f2f4f5"
 
-
+-- Register default colors and properties:
 return {
   font = font.default,
   -- Background colors:

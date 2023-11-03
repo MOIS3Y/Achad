@@ -2,14 +2,15 @@
 -- ░█░ █▀█ ██▄ █░▀░█ ██▄ ▄
 -- -- -- -- -- -- -- -- --
 
-local gears = require "gears"
+-- Imports:
+local gears     = require "gears"
 
-local default = require "ui.theme.default"
-local hotkeys = require "ui.theme.hotkeys"
-local layouts = require "ui.theme.layouts"
-local menu = require "ui.theme.menu"
-local titlebar = require "ui.theme.titlebar"
-local taglist = require "ui.theme.taglist"
+local default   = require "ui.theme.default"
+local hotkeys   = require "ui.theme.hotkeys"
+local layouts   = require "ui.theme.layouts"
+local menu      = require "ui.theme.menu"
+local titlebar  = require "ui.theme.titlebar"
+local taglist   = require "ui.theme.taglist"
 local wallpaper = require "ui.theme.wallpaper"
 
 -- There are other variable sets
@@ -31,6 +32,7 @@ local wallpaper = require "ui.theme.wallpaper"
 --theme.bg_widget = "#cc0000"
 
 
+-- Register all ui colors and properties:
 return gears.table.join(
   default,
   hotkeys,
