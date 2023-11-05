@@ -3,5 +3,5 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -
 
 return {
-  rofi = "rofi -show drun"
+  launcher = "rofi -show drun"
 }
