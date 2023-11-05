@@ -52,10 +52,28 @@ main_bar.init = function (s)
       },
       layout = wibox.layout.fixed.horizontal
     },
+    -- -- -- -- -- Center widgets -- -- -- -- --
+    {
+      {
+        margins = dpi(45),
+        widget = wibox.container.margin
+      },
+      layout = wibox.layout.align.horizontal
+    },
     -- -- -- -- -- Right widgets -- -- -- -- --
     {
       {
         components.keyboard_layout,
+        margins = dpi(5),
+        widget = wibox.container.margin
+      },
+      {
+        components.textclock.calendar,
+        margins = dpi(5),
+        widget = wibox.container.margin
+      },
+      {
+        components.textclock.clock,
         margins = dpi(5),
         widget = wibox.container.margin
       },
