@@ -6,8 +6,8 @@
 local awful     = require "awful"
 local beautiful = require "beautiful"
 
-local tags      = require "core.tags"
-local bars  = require "ui.widgets.bars"
+local tags = require "core.tags"
+local bars = require "ui.widgets.bars"
 
 
 -- Init UI:
