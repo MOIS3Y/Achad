@@ -2,16 +2,18 @@
 -- █▀█ ▀▄▀▄▀ ██▄ ▄█ █▄█ █░▀░█ ██▄   █░▀░█ ██▄ █░▀█ █▄█ ▄
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-local awful = require "awful"
+-- Imports:
+local awful         = require "awful"
 local hotkeys_popup = require "awful.hotkeys_popup"
 
-local apps = require "apps"
+local apps          = require "apps"
 
+-- Register awesome menu:
 return {
   {
     "hotkeys",
     function()
-      hotkeys_popup.show_help(nil, awful.screen.focused()) 
+      hotkeys_popup.show_help(nil, awful.screen.focused())
     end
   },
   {
