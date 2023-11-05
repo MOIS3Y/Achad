@@ -77,6 +77,11 @@ main_bar.init = function (s)
         margins = dpi(5),
         widget = wibox.container.margin
       },
+      {
+        components.powermenu,
+        margins = dpi(5),
+        widget = wibox.container.margin
+      },
       layout = wibox.layout.fixed.horizontal
     },
     layout = wibox.layout.align.horizontal
