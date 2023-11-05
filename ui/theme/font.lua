@@ -3,9 +3,10 @@
 -- -- -- -- -- -- -- 
 
 return {
-  default = "JetBrains Mono Nerd Font 9",
-  titlebar = "Inter Regular 11",
-  taglist = "JetBrains Mono Nerd Font 12",
-  hotkeys = "JetBrains Mono Nerd Font 9",
-  hotkeys_description = "Inter Regular 9"
+  default             = "JetBrains Mono Nerd Font 9",
+  titlebar            = "Ubuntu Regular 11",
+  taglist             = "JetBrains Mono Nerd Font 11",
+  hotkeys             = "JetBrains Mono Nerd Font 9",
+  hotkeys_description = "Ubuntu Regular 11",
+  powermenu           = "Ubuntu Regular 11",
 }
