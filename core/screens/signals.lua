@@ -9,6 +9,8 @@ local beautiful = require "beautiful"
 screen.connect_signal("property::geometry", beautiful.set_wallpaper)
 
 
+-- Hide borders for tiling clients:
+--https://github.com/awesomeWM/awesome/issues/2518
 screen.connect_signal(
   "arrange",
   function (s)
