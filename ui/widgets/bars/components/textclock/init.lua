@@ -7,13 +7,13 @@ local awful = require "awful"
 local gears = require "gears"
 local wibox = require "wibox"
 
-local color = require "ui.theme.color_scheme"
+local color = require "ui.theme.color"
 local theme = require "ui.theme.default"
 
 
 -- Init btn colors: 
-local bg_color_calendar = color.base0D
-local bg_color_clock    = color.base0E
+local bg_color_calendar = color.scheme.base0D
+local bg_color_clock    = color.scheme.base0E
 local fg_color          = theme.bg_normal
 
 -- Init row widget:

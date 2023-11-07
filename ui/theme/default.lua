@@ -5,9 +5,9 @@
 -- Imports:
 local xresources = require "beautiful.xresources"
 
-local color_scheme = require "ui.theme.color_scheme"
-local path         = require "ui.theme.path"
-local font         = require "ui.theme.font"
+local color      = require "ui.theme.color"
+local path       = require "ui.theme.path"
+local font       = require "ui.theme.font"
 
 -- Init vars:
 local icon_path = path.icons
@@ -35,20 +35,20 @@ local dpi = xresources.apply_dpi
 return {
   font = font.default,
   -- Background colors:
-  bg_normal   = color_scheme.base00,
-  bg_focus    = color_scheme.base00,
-  bg_urgent   = color_scheme.base00,
-  bg_minimize = color_scheme.base00,
-  bg_systray  = color_scheme.base00,
+  bg_normal     = color.scheme.base00,
+  bg_focus      = color.scheme.base00,
+  bg_urgent     = color.scheme.base00,
+  bg_minimize   = color.scheme.base00,
+  bg_systray    = color.scheme.base00,
   -- Foreground colors:
-  fg_normal   = color_scheme.base05,
-  fg_focus    = color_scheme.base0D,
-  fg_urgent   = color_scheme.base08,
-  fg_minimize = color_scheme.base05,
+  fg_normal     = color.scheme.base05,
+  fg_focus      = color.scheme.base0D,
+  fg_urgent     = color.scheme.base08,
+  fg_minimize   = color.scheme.base05,
   -- Client colors:
-  border_normal = color_scheme.base00,
-  border_focus  = color_scheme.base0D,
-  border_marked = color_scheme.base09,
+  border_normal = color.scheme.base00,
+  border_focus  = color.scheme.base0D,
+  border_marked = color.scheme.base09,
   -- Client properties:
   useless_gap   = dpi(4),
   border_width  = dpi(1),

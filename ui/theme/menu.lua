@@ -4,16 +4,14 @@
 
 -- Imports:
 local xresources   = require "beautiful.xresources"
-local theme_assets = require "beautiful.theme_assets"
 
-local color_scheme = require "ui.theme.color_scheme"
+local color = require "ui.theme.color"
 
 -- Set vars:
 local dpi = xresources.apply_dpi
 
-
--- Init menu properties and colors:
-local _M = {
+-- Register awesome main menu color and properties:
+return {
   -- Properties:
   menu_font         = "",
   menu_submenu      = " ",  -- nf-cod-triangle_right
@@ -21,19 +19,9 @@ local _M = {
   menu_width        = dpi(160),
   menu_border_width = dpi(1),
   --Colors:
-  menu_border_color = color_scheme.base00,
-  menu_fg_focus     = color_scheme.base0D,
-  menu_bg_focus     = color_scheme.base00,
-  menu_fg_normal    = color_scheme.base05,
-  menu_bg_normal    = color_scheme.base00
+  menu_border_color = color.scheme.base00,
+  menu_fg_focus     = color.scheme.base0D,
+  menu_bg_focus     = color.scheme.base00,
+  menu_fg_normal    = color.scheme.base05,
+  menu_bg_normal    = color.scheme.base00
 }
-
--- Generate Awesome icon:
-_M.awesome_icon = theme_assets.awesome_icon(
-  dpi(100),
-  color_scheme.base02,
-  color_scheme.base0D
-)
-
--- Register awesome main menu color and properties:
-return _M

@@ -17,7 +17,7 @@ local beautiful = require "beautiful"
 local wibox     = require "wibox"
 local gears     = require "gears"
 
-local color     = require "ui.theme.color_scheme"
+local color     = require "ui.theme.color"
 local font      = require "ui.theme.font"
 local theme     = require "ui.theme.default"
 local power     = require "apps.power"
@@ -25,7 +25,7 @@ local icons     = require "ui.widgets.bars.components.powermenu.icons"
 
 
 -- Init btn colors: 
-local bg_color = color.base0F
+local bg_color = color.scheme.base0F
 local fg_color = theme.bg_normal
 
 

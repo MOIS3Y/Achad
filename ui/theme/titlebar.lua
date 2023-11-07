@@ -10,13 +10,13 @@ local font = require "ui.theme.font"
 local path = require "ui.theme.path"
 
 -- Import current color scheme:
-local colors = require "ui.theme.color_scheme"
+local color = require "ui.theme.color"
 
 -- Set btn colors:
-local normal   = colors.base02
-local close    = colors.base08
-local minimize = colors.base0A
-local maximize = colors.base0B
+local normal   = color.scheme.base02
+local close    = color.scheme.base08
+local minimize = color.scheme.base0A
+local maximize = color.scheme.base0B
 
 -- Recolor images func shourtcut: 
 local gcrci = gears.color.recolor_image
