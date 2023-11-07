@@ -25,8 +25,9 @@ local icons     = require "ui.widgets.bars.components.powermenu.icons"
 
 
 -- Init btn colors: 
-local bg_color = color.scheme.base0F
-local fg_color = theme.bg_normal
+local pm_btn_bg_color = color.scheme.base0F
+local pm_btn_fg_color = theme.bg_normal
+local pm_btn_press = color:lightness(pm_btn_bg_color, -25)
 
 
 -- Init widget btn:
@@ -39,8 +40,8 @@ local logout_menu_widget = wibox.widget {
     top = 4, bottom = 4, left = 8, right = 4,
     layout = wibox.container.margin
   },
-  bg = bg_color,
-  fg = fg_color,
+  bg = pm_btn_bg_color,
+  fg = pm_btn_fg_color,
   shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 4)
   end,
@@ -133,15 +134,17 @@ logout_menu_widget:buttons(
     awful.button({}, 1, function()
       if popup.visible then
         popup.visible = not popup.visible
+        logout_menu_widget:set_bg(pm_btn_bg_color)
       else
         popup:move_next_to(mouse.current_widget_geometry)
+        logout_menu_widget:set_bg(pm_btn_press)
       end
     end)
   )
 )
 -- higlight btn press:
-logout_menu_widget:connect_signal("button::press", function(c) c:set_bg(beautiful.fg_normal) end)
-logout_menu_widget:connect_signal("button::release", function(c) c:set_bg(bg_color) end)
+-- logout_menu_widget:connect_signal("button::press", function(c) c:set_bg(beautiful.fg_normal) end)
+-- logout_menu_widget:connect_signal("button::release", function(c) c:set_bg(bg_color) end)
 
 
 return logout_menu_widget
