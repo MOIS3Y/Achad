@@ -21,3 +21,4 @@ require "core.error_handler"
 -- Configuration pkgs:
 require "ui"
 require "core"
+require "extensions"
