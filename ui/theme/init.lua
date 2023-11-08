@@ -11,6 +11,7 @@ local layouts   = require "ui.theme.layouts"
 local menu      = require "ui.theme.menu"
 local titlebar  = require "ui.theme.titlebar"
 local taglist   = require "ui.theme.taglist"
+local tooltip   = require "ui.theme.tooltip"
 local wallpaper = require "ui.theme.wallpaper"
 
 
@@ -22,5 +23,6 @@ return gears.table.join(
   menu,
   titlebar,
   taglist,
+  tooltip,
   wallpaper
 )
