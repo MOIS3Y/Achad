@@ -12,7 +12,7 @@ local theme = require "ui.theme.default"
 
 
 -- Init btn colors: 
-local bg_color = color.scheme.base0B
+local bg_color = color.scheme.base0C
 local fg_color = theme.bg_normal
 
 -- Init row widget:
