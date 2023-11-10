@@ -9,6 +9,7 @@ local default   = require "ui.theme.default"
 local hotkeys   = require "ui.theme.hotkeys"
 local layouts   = require "ui.theme.layouts"
 local menu      = require "ui.theme.menu"
+local systray   = require "ui.theme.systray"
 local titlebar  = require "ui.theme.titlebar"
 local taglist   = require "ui.theme.taglist"
 local tooltip   = require "ui.theme.tooltip"
@@ -22,6 +23,7 @@ return gears.table.join(
   hotkeys,
   layouts,
   menu,
+  systray,
   titlebar,
   taglist,
   tooltip,

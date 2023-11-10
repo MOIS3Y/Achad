@@ -45,5 +45,12 @@ _M.volume = {
 
 }
 
+
+_M.systray = {
+  bg_color    = color.scheme.base01,
+  icon_font   = font.bar_widget_icon,
+}
+
+
 -- Register properties:
 return _M

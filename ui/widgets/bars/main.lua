@@ -46,7 +46,12 @@ _M.init = function (s)
       },
       {
         s.layoutbox,
-        margins = dpi(7),
+        margins = dpi(8),
+        widget = wibox.container.margin
+      },
+      {
+        components.systray,
+        margins = dpi(5),
         widget = wibox.container.margin
       },
       layout = wibox.layout.fixed.horizontal
