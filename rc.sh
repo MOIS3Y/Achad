@@ -7,7 +7,11 @@ run_xephyr() {
 
 # run awesome wm
 run_awesome() {
+    # set env:
     export DISPLAY=:5
+    export ACHAD_THEME="catppiccin_mocha"
+    export ACHAD_DEVICE="computer"
+
     sleep 1  # require pause min 1 sec
     dbus-run-session awesome -c ./rc.lua
 }

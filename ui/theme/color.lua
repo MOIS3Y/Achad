@@ -2,9 +2,13 @@
 -- █▄▄ █▄█ █▄▄ █▄█ █▀▄ ▄
 
 -- Imports:
-local colorize = require "modules.colorize"
+local colorize    = require "modules.colorize"
+local environment = require "environment"
 
-local color = colorize.Color:new(colorize.colors.catppuccin_mocha)
+-- Current theme from env:
+local current_theme = environment.theme
 
+local color = colorize.Color:new(colorize.colors[current_theme])
 
+-- Register theme:
 return color
