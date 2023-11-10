@@ -7,9 +7,10 @@ local menu = require "core.menu"
 
 
 root.keys(
-    gears.table.join(
+  gears.table.join(
     keys.awesome,
     keys.client_misc,
+    keys.hardware,
     keys.launcher,
     keys.layout,
     keys.screen,

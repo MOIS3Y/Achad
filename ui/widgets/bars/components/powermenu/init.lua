@@ -8,7 +8,6 @@
   https://github.com/streetturtle/awesome-wm-widgets/
   @author Pavel Makhov
   @copyright 2020 Pavel Makhov
-
 --]]
 
 -- Imports:
@@ -18,16 +17,16 @@ local wibox     = require "wibox"
 local gears     = require "gears"
 
 local color     = require "ui.theme.color"
-local font      = require "ui.theme.font"
-local theme     = require "ui.theme.default"
 local power     = require "apps.power"
 local icons     = require "ui.widgets.bars.components.powermenu.icons"
 
 
--- Init btn colors: 
-local pm_btn_bg_color = color.scheme.base0F
-local pm_btn_fg_color = theme.bg_normal
-local pm_btn_press = color:lightness(pm_btn_bg_color, -25)
+-- Init btn properties:
+local icon_font       = beautiful.powermenu.icon_font
+local text_font       = beautiful.powermenu.text_font
+local pm_btn_bg_color = beautiful.powermenu.bg_color
+local pm_btn_fg_color = beautiful.bg_normal
+local pm_btn_press    = color:lightness(pm_btn_bg_color, -25)
 
 
 -- Init widget btn:
@@ -35,6 +34,7 @@ local logout_menu_widget = wibox.widget {
   {
     {
       text = " ",  -- nf-fa-power_off
+      font = icon_font,
       widget = wibox.widget.textbox,
     },
     top = 4, bottom = 4, left = 8, right = 4,
@@ -87,7 +87,7 @@ for _, item in ipairs(menu_items) do
         },
         {
           text = item.name,
-          font = font.powermenu,
+          font = text_font,
           widget = wibox.widget.textbox
         },
         spacing = 12,
@@ -99,9 +99,13 @@ for _, item in ipairs(menu_items) do
     bg = beautiful.bg_normal,
     widget = wibox.container.background
   }
+
+
   -- higlight elements:
   row:connect_signal("mouse::enter", function(c) c:set_fg(beautiful.fg_focus) end)
   row:connect_signal("mouse::leave", function(c) c:set_fg(beautiful.fg_normal) end)
+
+
 
   -- replace cusor arrow to hand:
   local old_cursor, old_wibox
@@ -119,6 +123,8 @@ for _, item in ipairs(menu_items) do
       old_wibox = nil
     end
   end)
+
+
   -- hide menu after press:
   row:buttons(awful.util.table.join(awful.button({}, 1, function()
     popup.visible = not popup.visible
@@ -129,8 +135,9 @@ end
 -- Init powermenu popup:
 popup:setup(rows)
 
+-- Init buttons:
 logout_menu_widget:buttons(
-  awful.util.table.join(
+  gears.table.join(
     awful.button({}, 1, function()
       if popup.visible then
         popup.visible = not popup.visible
@@ -142,9 +149,6 @@ logout_menu_widget:buttons(
     end)
   )
 )
--- higlight btn press:
--- logout_menu_widget:connect_signal("button::press", function(c) c:set_bg(beautiful.fg_normal) end)
--- logout_menu_widget:connect_signal("button::release", function(c) c:set_bg(bg_color) end)
 
 
 return logout_menu_widget

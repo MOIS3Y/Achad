@@ -1,11 +1,10 @@
 -- █▀▄▀█ █▀▀ █▄░█ █░█ ▀
 -- █░▀░█ ██▄ █░▀█ █▄█ ▄
--- -- -- -- -- -- -- --
 
 -- Imports:
-local xresources   = require "beautiful.xresources"
+local xresources = require "beautiful.xresources"
 
-local color = require "ui.theme.color"
+local color      = require "ui.theme.color"
 
 -- Set vars:
 local dpi = xresources.apply_dpi

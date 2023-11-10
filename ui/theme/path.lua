@@ -1,6 +1,5 @@
 -- █▀█ ▄▀█ ▀█▀ █░█ ▀
 -- █▀▀ █▀█ ░█░ █▀█ ▄
--- -- -- -- -- -- -
 
 -- Imports:
 local gfs = require "gears.filesystem"

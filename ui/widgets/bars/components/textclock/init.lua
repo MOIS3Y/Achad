@@ -3,18 +3,18 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 -- Imports:
-local awful = require "awful"
-local gears = require "gears"
-local wibox = require "wibox"
-
-local color = require "ui.theme.color"
-local theme = require "ui.theme.default"
+local beautiful = require "beautiful"
+local gears     = require "gears"
+local wibox     = require "wibox"
 
 
--- Init btn colors: 
-local bg_color_calendar = color.scheme.base0D
-local bg_color_clock    = color.scheme.base0E
-local fg_color          = theme.bg_normal
+-- Init widget properties: 
+local bg_color_calendar = beautiful.textclock.bg_color_calendar
+local bg_color_clock    = beautiful.textclock.bg_color_clock
+local fg_color          = beautiful.textclock.fg_color
+local icon_font         = beautiful.textclock.icon_font
+local text_font         = beautiful.textclock.text_font
+
 
 -- Init row widget:
 local calendar = wibox.widget.textclock()
@@ -30,13 +30,17 @@ local calendar_btn = wibox.widget {
     {
       {
         text = "󰃭 ",  -- nf-md-calendar
+        font = icon_font,
         widget = wibox.widget.textbox
       },
       top = 4, bottom = 4, left = 8,
       widget = wibox.container.margin
     },
     {
-      {  widget = calendar },
+      {
+        font = text_font,
+        widget = calendar
+      },
       top = 4, bottom = 4, right = 8,
       widget = wibox.container.margin
     },
@@ -55,13 +59,17 @@ local clock_btn = wibox.widget {
     {
       {
         text = " ",  -- nf-fa-clock_o
+        font = icon_font,
         widget = wibox.widget.textbox
       },
       top = 4, bottom = 4, left = 8,
       widget = wibox.container.margin
     },
     {
-      {  widget = clock },
+      {
+        font = text_font,
+        widget = clock
+      },
       top = 4, bottom = 4, right = 8,
       widget = wibox.container.margin
     },

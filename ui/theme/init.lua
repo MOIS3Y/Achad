@@ -13,6 +13,7 @@ local titlebar  = require "ui.theme.titlebar"
 local taglist   = require "ui.theme.taglist"
 local tooltip   = require "ui.theme.tooltip"
 local wallpaper = require "ui.theme.wallpaper"
+local widgets   = require "ui.theme.widgets"
 
 
 -- Register all ui colors and properties:
@@ -24,5 +25,6 @@ return gears.table.join(
   titlebar,
   taglist,
   tooltip,
-  wallpaper
+  wallpaper,
+  widgets
 )

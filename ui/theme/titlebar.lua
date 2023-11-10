@@ -4,10 +4,9 @@
 
 -- Imports:
 local gears = require "gears"
-local gfs   = require "gears.filesystem"
 
-local font = require "ui.theme.font"
-local path = require "ui.theme.path"
+local font  = require "ui.theme.font"
+local path  = require "ui.theme.path"
 
 -- Import current color scheme:
 local color = require "ui.theme.color"

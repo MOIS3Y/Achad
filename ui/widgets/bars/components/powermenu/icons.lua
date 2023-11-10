@@ -3,10 +3,10 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 -- Imports:
-local gears     = require "gears"
+local gears = require "gears"
 
-local path      = require "ui.theme.path"
-local color     = require "ui.theme.color"
+local path  = require "ui.theme.path"
+local color = require "ui.theme.color"
 
 
 -- Set vars:

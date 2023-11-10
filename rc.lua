@@ -1,14 +1,17 @@
--- ▄▀█ █░█░█   █▀▀ █░█ ▄▀█ █▀▄ ▀
--- █▀█ ▀▄▀▄▀   █▄▄ █▀█ █▀█ █▄▀ ▄
--- -- -- -- -- -- -- -- -- -- --
+-- ▄▀█  █▀▀ █░█ ▄▀█ █▀▄ ▀
+-- █▀█  █▄▄ █▀█ █▀█ █▄▀ ▄
 
 --[[
-  Entrypoint to run the AWchad configuration:
-  STANDALONE: awesome -c ./rc.lu
+  Entrypoint to run the Achad configuration:
+  STANDALONE: awesome -c ./rc.sh
   SDDM: awesome -c $HOME/.config/awesome/rc.lua
---]]
+]]
 
 pcall(require, "luarocks.loader")
+
+-- Imports:
+local beautiful = require "beautiful"
+local gears     = require "gears"
 
 -- When loaded, this module makes sure that there's always a client
 -- that will have focus on events 
@@ -18,7 +21,10 @@ require "awful.autofocus"
 -- Realtime error handler:
 require "core.error_handler"
 
+
+-- Register theme:
+beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua")
+
 -- Configuration pkgs:
-require "ui"
 require "core"
 require "extensions"

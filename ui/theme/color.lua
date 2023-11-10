@@ -1,6 +1,5 @@
 -- █▀▀ █▀█ █░░ █▀█ █▀█ ▀
 -- █▄▄ █▄█ █▄▄ █▄█ █▀▄ ▄
--- -- -- -- -- -- -- --
 
 -- Imports:
 local colorize = require "modules.colorize"
