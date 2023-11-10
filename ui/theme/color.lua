@@ -2,13 +2,10 @@
 -- █▄▄ █▄█ █▄▄ █▄█ █▀▄ ▄
 
 -- Imports:
-local colorize    = require "modules.colorize"
-local environment = require "environment"
+local colorize = require "modules.colorize"
 
--- Current theme from env:
-local current_theme = environment.theme
 
-local color = colorize.Color:new(colorize.colors[current_theme])
+local color = colorize.Color:new(colorize.colors[ACHAD_THEME])
 
 -- Register theme:
 return color

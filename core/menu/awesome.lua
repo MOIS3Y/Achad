@@ -1,35 +1,34 @@
 -- ▄▀█ █░█░█ █▀▀ █▀ █▀█ █▀▄▀█ █▀▀   █▀▄▀█ █▀▀ █▄░█ █░█ ▀
 -- █▀█ ▀▄▀▄▀ ██▄ ▄█ █▄█ █░▀░█ ██▄   █░▀░█ ██▄ █░▀█ █▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 -- Imports:
 local awful         = require "awful"
 local hotkeys_popup = require "awful.hotkeys_popup"
 
 local apps          = require "apps"
+local themes        = require "core.menu.themes"
 
 -- Register awesome menu:
 return {
   {
-    "hotkeys",
+    "Themes", themes
+  },
+  {
+    "Hotkeys",
     function()
       hotkeys_popup.show_help(nil, awful.screen.focused())
     end
   },
   {
-    "manual",
+    "Manual",
     apps.cli.terminal .. " -e man awesome"
   },
   {
-    "edit config",
-    apps.cli.editor .. " " .. awesome.conffile
-  },
-  {
-    "restart",
+    "Restart",
     awesome.restart
   },
   {
-    "quit",
+    "Quit",
     function()
       awesome.quit()
     end

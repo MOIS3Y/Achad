@@ -1,6 +1,5 @@
 -- █▀▄▀█ ▄▀█ █ █▄░█   █▀▄▀█ █▀▀ █▄░█ █░█ ▀
 -- █░▀░█ █▀█ █ █░▀█   █░▀░█ ██▄ █░▀█ █▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 -- Imports:
 local awful        = require "awful"
@@ -12,12 +11,18 @@ local paths        = require "ui.theme.path"
 -- Set icon dir:
 local icon_dir     = paths.icons .. "menu/"
 
--- Register main menu:
-return awful.menu(
+-- Init main menu:
+local menu = awful.menu(
   {
     items = {
-      { "Terminal",  apps.cli.terminal                         },
-      { "AwesomeWM", awesome_menu, icon_dir .. "awesomewm.png" }
+      { "Terminal",   apps.cli.terminal },
+      { "Browser",    apps.gui.browser  },
+      { "Explorer",   apps.cli.explorer },
+      { "Awesome WM", awesome_menu      }
     }
   }
 )
+
+
+-- Register main menu:
+return menu

@@ -15,7 +15,7 @@ return {
   menu_font         = "",
   menu_submenu      = " ",  -- nf-cod-triangle_right
   menu_height       = dpi(30),
-  menu_width        = dpi(160),
+  menu_width        = dpi(180),
   menu_border_width = dpi(1),
   --Colors:
   menu_border_color = color.scheme.base00,
