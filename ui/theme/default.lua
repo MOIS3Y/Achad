@@ -52,7 +52,7 @@ return {
   useless_gap   = dpi(4),
   border_width  = dpi(1),
   -- Icon theme:
-  icon_theme    = nil,
+  icon_theme    = "Papirus",
   -- OS logo:
   os_logo       = icon_path .. "logo/os.png"
 }

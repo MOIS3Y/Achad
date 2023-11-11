@@ -3,7 +3,7 @@
 
 --[[
   Entrypoint to run the Achad configuration:
-  STANDALONE: awesome -c ./rc.sh
+  STANDALONE: awesome -c ./rc.lua
   SDDM: awesome -c $HOME/.config/awesome/rc.lua
 ]]
 
@@ -30,3 +30,4 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua")
 -- Configuration pkgs:
 require "core"
 require "extensions"
+require "notifications"
