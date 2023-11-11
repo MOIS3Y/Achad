@@ -5,8 +5,7 @@
 return {
   bar_widget_icon     = "JetBrains Mono Nerd Font 11",
   bar_widget_text     = "JetBrains Mono Nerd Font 9",
-  default             = "JetBrains Mono Nerd Font 9",
-  titlebar            = "Ubuntu Regular 11",
+  default             = "Ubuntu Regular 10",
   taglist             = "JetBrains Mono Nerd Font 10",
   tooltip             = "Ubuntu Regular 9",
   hotkeys             = "Ubuntu Regular 10",

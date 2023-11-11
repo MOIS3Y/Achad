@@ -1,15 +1,13 @@
 -- ▀█▀ █ ▀█▀ █░░ █▀▀ █▄▄ ▄▀█ █▀█ ▀
 -- ░█░ █ ░█░ █▄▄ ██▄ █▄█ █▀█ █▀▄ ▄
--- -- -- -- -- -- -- -- -- -- -- -
 
 -- Imports:
 local gears = require "gears"
 
-local font  = require "ui.theme.font"
 local path  = require "ui.theme.path"
 
--- Import current color scheme:
-local color = require "ui.theme.color"
+local color         = require "ui.theme.color"
+local default_theme = require "ui.theme.default"
 
 -- Set btn colors:
 local normal   = color.scheme.base02
@@ -49,8 +47,11 @@ local btn = {
 
 -- Register buttons:
 return {
-  -- Titlebar client name font:
-  font_title = font.titlebar,
+  -- Titlebar properties:
+  titlebar_fg_normal = default_theme.fg_normal,
+  titlebar_bg_normal = default_theme.bg_normal,
+  titlebar_fg        = default_theme.fg_normal,
+  titlebar_bg        = default_theme.bg_normal,
   -- Close Button icons:
   titlebar_close_button_normal          = btn.close_normal,
   titlebar_close_button_focus           = btn.close_focus,
