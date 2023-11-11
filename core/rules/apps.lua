@@ -1,11 +1,10 @@
 -- ▄▀█ █▀█ █▀█ █▀   █▀█ █░█ █░░ █▀▀ █▀ ▀
 -- █▀█ █▀▀ █▀▀ ▄█   █▀▄ █▄█ █▄▄ ██▄ ▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 return {
   -- Firefox: set always map on the tag named " 1 " on screen 1
   {
-    rule = {instance = "Firefox"},
+    rule = {class = "firefox"},
     properties = {
       screen = 1,
       tag = " 1 "
