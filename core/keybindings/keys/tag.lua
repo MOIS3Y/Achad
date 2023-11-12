@@ -1,11 +1,15 @@
-local gears = require "gears"
-local awful = require "awful"
+-- ▀█▀ ▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▀ ▀
+-- ░█░ █▀█ █▄█   █░█ ██▄ ░█░ ▄█ ▄
 
+-- Imports:
+local gears  = require "gears"
+local awful  = require "awful"
 
 local modkey = require "core.keybindings.modkey"
 
 
 local _M = gears.table.join(
+  -- -- -- View tags clockwise and counterclockwise  -- -- --
   awful.key(
     {modkey}, "Left",
     awful.tag.viewprev,
@@ -22,6 +26,7 @@ local _M = gears.table.join(
       group = "tag"
     }
   ),
+  -- -- -- Go back previous tag -- -- --
   awful.key(
     {modkey}, "Escape",
     awful.tag.history.restore,
@@ -35,7 +40,7 @@ local _M = gears.table.join(
 for i = 1, 9 do
   _M = gears.table.join(
     _M,
-    -- View tag only.
+    -- -- -- View tag -- -- -
     awful.key(
       {modkey}, "#" .. i + 9,
       function ()
@@ -48,7 +53,7 @@ for i = 1, 9 do
         group = "tag"
       }
     ),
-    -- Toggle tag display.
+    -- -- -- Toggle tag display -- -- --
     awful.key(
       {modkey, "Control"}, "#" .. i + 9,
       function ()
@@ -61,7 +66,7 @@ for i = 1, 9 do
         group = "tag"
       }
     ),
-    -- Move client to tag.
+    -- -- --  Move client to tag by number -- -- --
     awful.key(
       {modkey, "Shift"}, "#" .. i + 9,
       function ()
@@ -75,7 +80,7 @@ for i = 1, 9 do
         group = "tag"
       }
     ),
-    -- Toggle tag on focused client.
+    -- -- -- Toggle tag on focused client -- -- --
     awful.key(
       {modkey, "Control", "Shift"}, "#" .. i + 9,
       function ()
@@ -92,5 +97,5 @@ for i = 1, 9 do
   )
 end
 
-
+-- Register tags keys:
 return _M

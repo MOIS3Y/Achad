@@ -1,15 +1,15 @@
 -- █░█ ▄▀█ █▀█ █▀▄ █░█░█ ▄▀█ █▀█ █▀▀  █▄▀ █▀▀ █▄█ █▀ ▀
 -- █▀█ █▀█ █▀▄ █▄▀ ▀▄▀▄▀ █▀█ █▀▄ ██▄  █░█ ██▄ ░█░ ▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 -- Imports:
-local awful = require "awful"
-local gears = require "gears"
+local awful  = require "awful"
+local gears  = require "gears"
 
 local modkey = require "core.keybindings.modkey"
 local pactl  = require "utils.pactl"
 
 
+-- Register hardware keys:
 return gears.table.join(
   awful.key(
     { }, "XF86AudioRaiseVolume",

@@ -1,11 +1,12 @@
 -- ▀█▀ █ ▀█▀ █░░ █▀▀ █▄▄ ▄▀█ █▀█   █▄▄ █░█ ▀█▀ ▀█▀ █▀█ █▄░█ █▀ ▀
 -- ░█░ █ ░█░ █▄▄ ██▄ █▄█ █▀█ █▀▄   █▄█ █▄█ ░█░ ░█░ █▄█ █░▀█ ▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
+-- Imports:
 local awful = require "awful"
 local gears = require "gears"
 
 
+-- Generate buttons for each titlebar:
 local titlebar_buttons = function (c)
   return gears.table.join(
     awful.button(

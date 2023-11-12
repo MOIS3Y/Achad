@@ -8,6 +8,7 @@ local menu = require "core.menu"
 
 root.keys(
   gears.table.join(
+    keys.apps,
     keys.awesome,
     keys.client_misc,
     keys.hardware,

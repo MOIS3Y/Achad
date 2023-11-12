@@ -1,8 +1,8 @@
 -- █▄▀ █▀▀ █▄█ █▀ ▀
 -- █░█ ██▄ ░█░ ▄█ ▄
--- -- -- -- -- -- -
 
 return  {
+  apps          = require "core.keybindings.keys.application",
   awesome       = require "core.keybindings.keys.awesome",
   client_misc   = require "core.keybindings.keys.client_misc",
   client_unique = require "core.keybindings.keys.client_unique",

@@ -1,16 +1,18 @@
 -- █▀▀ █░░ █ █▀▀ █▄░█ ▀█▀   █▀▄▀█ █ █▀ █▀▀ ▀
 -- █▄▄ █▄▄ █ ██▄ █░▀█ ░█░   █░▀░█ █ ▄█ █▄▄ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-local awful = require "awful"
-local gears = require "gears"
+-- Imports:
+local awful  = require "awful"
+local gears  = require "gears"
 
 local modkey = require "core.keybindings.modkey"
 
 
+-- Register client misc keys:
 return gears.table.join(
+  -- -- -- Focus next or previous client by index -- -- --
   awful.key(
-    {modkey}, "j",
+    {modkey}, "space",
       function ()
         awful.client.focus.byidx(1)
       end,
@@ -20,7 +22,7 @@ return gears.table.join(
     }
   ),
   awful.key(
-    {modkey}, "k",
+    {modkey, "Shift"}, "space",
       function ()
         awful.client.focus.byidx(-1)
       end,
@@ -29,6 +31,28 @@ return gears.table.join(
       group = "client"
     }
   ),
+  -- -- -- Move the focused client clockwise and counterclockwise -- -- --
+  awful.key(
+    {modkey}, "k",
+    function ()
+      awful.client.cycle(true)
+    end,
+    {
+      description = "move the focused client clockwise",
+      group = "client"
+    }
+  ),
+  awful.key(
+    {modkey}, "j",
+    function ()
+      awful.client.cycle(false)
+    end,
+    {
+      description = "move the focused client counterclockwise",
+      group = "client"
+    }
+  ),
+  -- -- -- Swap with next or previous client by index -- -- --
   awful.key(
     {modkey, "Shift"}, "j",
     function ()
@@ -49,38 +73,12 @@ return gears.table.join(
       group = "client"
     }
   ),
+  -- -- -- Jump to urgent client -- -- --
   awful.key(
     {modkey}, "u",
     awful.client.urgent.jumpto,
     {
       description = "jump to urgent client",
-      group = "client"
-    }
-  ),
-  awful.key(
-    {modkey}, "Tab",
-    function ()
-      awful.client.focus.history.previous()
-      if client.focus then
-        client.focus:raise()
-      end
-    end,
-    {
-      description = "go back",
-      group = "client"
-    }
-  ),
-  awful.key(
-    {modkey, "Control"}, "n",
-    function ()
-      local c = awful.client.restore()
-      -- Focus restored client
-      if c then
-        c:emit_signal("request::activate", "key.unminimize", {raise = true})
-      end
-    end,
-    {
-      description = "restore minimized",
       group = "client"
     }
   )

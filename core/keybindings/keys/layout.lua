@@ -1,10 +1,16 @@
-local awful = require "awful"
-local gears = require "gears"
+-- █░░ ▄▀█ █▄█ █▀█ █░█ ▀█▀   █▄▀ █▀▀ █▄█ █▀ ▀
+-- █▄▄ █▀█ ░█░ █▄█ █▄█ ░█░   █░█ ██▄ ░█░ ▄█ ▄
+
+-- Imports:
+local awful  = require "awful"
+local gears  = require "gears"
 
 local modkey = require "core.keybindings.modkey"
 
 
+-- Register layout keys:
 return gears.table.join(
+  -- -- -- Increase and decrise master width factor -- -- --
   awful.key(
     { modkey}, "l",
     function ()
@@ -25,6 +31,7 @@ return gears.table.join(
       group = "layout"
     }
   ),
+  -- -- -- Increase and decrease the numbers of master clients -- -- --
   awful.key(
     {modkey, "Shift"}, "h",
     function ()
@@ -45,6 +52,7 @@ return gears.table.join(
       group = "layout"
     }
   ),
+  -- -- -- Increase and decrease the number of columns -- -- --
   awful.key(
     {modkey, "Control"}, "h",
     function ()
@@ -65,8 +73,9 @@ return gears.table.join(
       group = "layout"
     }
   ),
+  -- -- -- Switch layouts clockwise and counterclockwise -- -- --
   awful.key(
-    {modkey}, "space",
+    {modkey}, "Tab",
     function ()
       awful.layout.inc(1)
     end,
@@ -76,7 +85,7 @@ return gears.table.join(
     }
   ),
   awful.key(
-    {modkey, "Shift"}, "space",
+    {modkey, "Shift"}, "Tab",
     function ()
       awful.layout.inc(-1)
     end,

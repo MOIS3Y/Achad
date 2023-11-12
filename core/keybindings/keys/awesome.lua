@@ -1,20 +1,21 @@
 -- █▄▀ █▀▀ █▄█ █▀  ▄▀█ █░█░█ █▀▀ █▀ █▀█ █▀▄▀█ █▀▀ ▀
 -- █░█ ██▄ ░█░ ▄█  █▀█ ▀▄▀▄▀ ██▄ ▄█ █▄█ █░▀░█ ██▄ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
-local awful = require "awful"
-local gears = require "gears"
+-- Imports:
+local awful         = require "awful"
+local gears         = require "gears"
 local hotkeys_popup = require "awful.hotkeys_popup"
 
-local modkey = require "core.keybindings.modkey"
+local modkey        = require "core.keybindings.modkey"
 
 
+-- Register awesome keys:
 return gears.table.join(
   awful.key(
     {modkey}, "s",
     hotkeys_popup.show_help,
     {
-      description = "show help",
+      description = "show keybindings map",
       group = "awesome"
     }
   ),
@@ -27,7 +28,7 @@ return gears.table.join(
     }
   ),
   awful.key(
-    {modkey, "Shift"}, "q",
+    {modkey, "Control"}, "q",
     awesome.quit,
     {
       description = "quit awesome",

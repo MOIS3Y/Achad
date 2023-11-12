@@ -1,13 +1,14 @@
 -- ▀█▀ ▄▀█ █▀▀   █░░ █ █▀ ▀█▀   █▄▄ █░█ ▀█▀ ▀█▀ █▀█ █▄░█ █▀ ▀
 -- ░█░ █▀█ █▄█   █▄▄ █ ▄█ ░█░   █▄█ █▄█ ░█░ ░█░ █▄█ █░▀█ ▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-local awful = require "awful"
-local gears = require "gears"
+-- Imports:
+local awful  = require "awful"
+local gears  = require "gears"
 
 local modkey = require "core.keybindings.modkey"
 
 
+-- Register tag list buttons:
 return gears.table.join(
   awful.button(
     {}, 1,
