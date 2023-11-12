@@ -34,6 +34,15 @@ _M.textclock = {
   text_font         = font.bar_widget_text,
 }
 
+
+_M.memory = {
+  bg_color  = color.scheme.base09,
+  fg_color  = theme.bg_normal,
+  icon_font = font.bar_widget_icon,
+  text_font = font.bar_widget_tex
+}
+
+
 _M.microphone = {
   bg_color    = color.scheme.base0A,
   fg_color    = theme.bg_normal,
@@ -42,6 +51,7 @@ _M.microphone = {
   mute_color  = color.scheme.base03,
   error_color = color.scheme.base08
 }
+
 
 _M.volume = {
   bg_color    = color.scheme.base0B,

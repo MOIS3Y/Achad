@@ -72,6 +72,11 @@ _M.init = function (s)
     -- -- -- -- -- Right widgets -- -- -- -- --
     {
       {
+        components.memory,
+        margins = dpi(5),
+        widget = wibox.container.margin
+      },
+      {
         components.microphone,
         margins = dpi(5),
         widget = wibox.container.margin
