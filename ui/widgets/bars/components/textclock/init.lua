@@ -18,7 +18,7 @@ local text_font         = beautiful.textclock.text_font
 
 -- Init row widget:
 local calendar = wibox.widget.textclock()
-calendar.format = "%a %m %b"
+calendar.format = "%a %d %b"
 
 local clock = wibox.widget.textclock()
 clock.format = "%H:%M"
