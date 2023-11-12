@@ -15,7 +15,7 @@ _M.sizyfy = function (value)
   local ext = "Kb"
   if value < 512000 then
     value = value / 1024.0
-  elseif value < 4194304000 then
+  elseif value < 1073741824 then
     value = value / 1048576.0
     ext = "Mb"
   else
