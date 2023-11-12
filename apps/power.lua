@@ -12,6 +12,7 @@ local hibernate = "systemctl hibernate"
 local reboot    = "reboot"
 local shutdown  = "shutdown now"
 
+
 -- Register command:
 return {
   ["logout"]    = function () awesome.quit()                    end,
