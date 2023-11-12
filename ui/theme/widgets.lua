@@ -59,5 +59,11 @@ _M.systray = {
 }
 
 
+_M.tasklist = {
+  bg_color  = color.scheme.base00,
+  fg_color  = color.scheme.base0B,
+}
+
+
 -- Register properties:
 return _M

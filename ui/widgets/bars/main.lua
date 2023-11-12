@@ -54,6 +54,11 @@ _M.init = function (s)
         margins = dpi(5),
         widget = wibox.container.margin
       },
+      {
+        components.tasklist,
+        margins = dpi(4),
+        widget = wibox.container.margin
+      },
       layout = wibox.layout.fixed.horizontal
     },
     -- -- -- -- -- Center widgets -- -- -- -- --

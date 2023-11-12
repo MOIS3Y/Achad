@@ -26,7 +26,7 @@ local icon_font       = beautiful.powermenu.icon_font
 local text_font       = beautiful.powermenu.text_font
 local pm_btn_bg_color = beautiful.powermenu.bg_color
 local pm_btn_fg_color = beautiful.bg_normal
-local pm_btn_press    = color:lightness(pm_btn_bg_color, -25)
+local pm_btn_press    = color:saturation(pm_btn_bg_color, 50)
 
 
 -- Init widget btn:
@@ -126,7 +126,7 @@ for _, item in ipairs(menu_items) do
 
 
   -- hide menu after press:
-  row:buttons(awful.util.table.join(awful.button({}, 1, function()
+  row:buttons(gears.table.join(awful.button({}, 1, function()
     popup.visible = not popup.visible
     item.command()
   end)))
