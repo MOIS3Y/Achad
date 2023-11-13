@@ -72,6 +72,11 @@ _M.init = function (s)
     -- -- -- -- -- Right widgets -- -- -- -- --
     {
       {
+        components.cpu,
+        margins = dpi(5),
+        widget = wibox.container.margin
+      },
+      {
         components.memory,
         margins = dpi(5),
         widget = wibox.container.margin

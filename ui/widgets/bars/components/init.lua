@@ -3,6 +3,7 @@
 
 
 return {
+  cpu             = require "ui.widgets.bars.components.cpu",
   keyboard_layout = require "ui.widgets.bars.components.keyboard_layout",
   launcher        = require "ui.widgets.bars.components.launcher",
   memory          = require "ui.widgets.bars.components.memory",

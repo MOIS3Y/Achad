@@ -10,6 +10,14 @@ local theme = require "ui.theme.default"
 local _M = {}
 
 -- Bar widgets:
+_M.cpu = {
+  bg_color  = color.scheme.base08,
+  fg_color  = theme.bg_normal,
+  icon_font = font.bar_widget_icon,
+  text_font = font.bar_widget_tex
+}
+
+
 _M.keyboard_layout = {
   bg_color  = color.scheme.base0C,
   fg_color  = theme.bg_normal,
