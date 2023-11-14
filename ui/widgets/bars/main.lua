@@ -45,13 +45,13 @@ _M.init = function (s)
         widget = wibox.container.margin
       },
       {
-        s.layoutbox,
-        margins = dpi(8),
+        components.systray,
+        margins = dpi(5),
         widget = wibox.container.margin
       },
       {
-        components.systray,
-        margins = dpi(5),
+        s.layoutbox,
+        margins = dpi(8),
         widget = wibox.container.margin
       },
       {
