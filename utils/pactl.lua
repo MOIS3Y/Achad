@@ -69,6 +69,18 @@ function _M.emit_signal_set_sink_volume(direction, current_volume, step)
 end
 
 
+function _M.emit_signal_set_source_volume(direction, current_volume, step)
+  if direction == "+" then
+    awesome.emit_signal("module::microphone_osd", (current_volume + step))
+    awesome.emit_signal("module::microphone_osd:show", true)
+  end
+  if direction == "-" then
+    awesome.emit_signal("module::microphone_osd", (current_volume - step))
+    awesome.emit_signal("module::microphone_osd:show", true)
+  end
+end
+
+
 function _M.volume_level_set(sink_or_source, device, direction, step, popup)
   -- Init CMD:
   local CMD_GET = "pactl get-" .. sink_or_source .. "-volume "
@@ -86,6 +98,10 @@ function _M.volume_level_set(sink_or_source, device, direction, step, popup)
     -- Set volume from popup widget if popup true:
     if popup and sink_or_source == "sink" then
       _M.emit_signal_set_sink_volume(direction, current_volume, step)
+      return nil
+    end
+    if popup and sink_or_source == "source" then
+      _M.emit_signal_set_source_volume(direction, current_volume, step)
       return nil
     end
     -- Set volume from this func if popup false:

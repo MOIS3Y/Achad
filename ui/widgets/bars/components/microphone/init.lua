@@ -57,39 +57,32 @@ local microphone_btn = awful.widget.watch(
   "pactl get-source-mute @DEFAULT_SOURCE@",
   1,
   function(widget, stdout)
-    if string.find(stdout, "yes") then
-      widget:get_children_by_id("microphone_value")[1]:set_text("Mute")
-      widget:get_children_by_id("microphone_icon")[1]:set_text(" ")  -- nf-fa-microphone_slash
+    local microphone_value = widget:get_children_by_id("microphone_value")[1]
+    local microphone_icon  = widget:get_children_by_id("microphone_icon")[1]
+    -- Check mute status:
+    if pactl.is_mute(stdout) then
       widget:set_bg(mute_color)
-    else
-      awful.spawn.easy_async(
-        "pactl get-source-volume @DEFAULT_SOURCE@",
-        function (out)
-          -- Init vars:
-          local current_vol
-          local volsum, volcnt = 0, 0
-          -- Get current volume:
-          for vol in string.gmatch(out, "(%d?%d?%d)%%") do
-            if vol ~= nil then
-              volsum = volsum + tonumber(vol)
-              volcnt = volcnt + 1
-            end
-          end
-          if volcnt == 0 then
-            widget:set_bg(error_color)
-            widget:get_children_by_id("microphone_value")[1]:set_text("ERROR")
-            widget:get_children_by_id("microphone_icon")[1]:set_text(" ")  -- nf-fa-microphone_slash
-            return nil
-          end
-          -- Count current volume:
-          current_vol = volsum / volcnt
-          -- Set volume value bg color and icon:
-          widget:set_bg(bg_color)
-          widget:get_children_by_id("microphone_value")[1]:set_text(current_vol)
-          widget:get_children_by_id("microphone_icon")[1]:set_text(" ")  -- nf-fa-microphone
-        end
-      )
+      microphone_value:set_text("Mute")
+      microphone_icon:set_text(" ")  -- nf-fa-microphone_slash
+      return nil
     end
+    awful.spawn.easy_async(
+      "pactl get-source-volume @DEFAULT_SOURCE@",
+      function (out)
+        -- Get current volume or show error label:
+        local current_volume = pactl.parse_current_volume(out)
+        if not current_volume then
+          widget:set_bg(error_color)
+          microphone_value:set_text("ERROR")
+          microphone_icon:set_text(" ")  -- nf-fa-microphone_slash
+          return nil
+        end
+        -- Set volume value bg color and icon:
+        widget:set_bg(bg_color)
+        microphone_value:set_text(current_volume)
+        microphone_icon:set_text(" ")  -- nf-fa-microphone
+      end
+    )
   end,
   microphone_level  -- watch func will be modify this widget
 )
@@ -107,13 +100,13 @@ microphone_btn:buttons(
     awful.button(
       {}, 4,
       function ()
-        pactl.volume_level_set("source", "@DEFAULT_SOURCE@", "+", 5)
+        pactl.volume_level_set("source", "@DEFAULT_SOURCE@", "+", 5, "popup")
       end
     ),
     awful.button(
       {}, 5,
       function ()
-        pactl.volume_level_set("source", "@DEFAULT_SOURCE@", "-", 5)
+        pactl.volume_level_set("source", "@DEFAULT_SOURCE@", "-", 5, "popup")
       end
     )
   )
