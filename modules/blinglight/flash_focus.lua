@@ -1,7 +1,5 @@
 -- █▀▀ █░░ ▄▀█ █▀ █░█   █▀▀ █▀█ █▀▀ █░█ █▀ ▀
 -- █▀░ █▄▄ █▀█ ▄█ █▀█   █▀░ █▄█ █▄▄ █▄█ ▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-
 
 --Imports:
 local gears = require("gears")
@@ -23,7 +21,6 @@ function _M.flashfocus (c)
             call_now = false,
             autostart = true,
         })
-
         g:connect_signal("timeout", function()
             if not c.valid then
                 return

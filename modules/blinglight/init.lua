@@ -10,5 +10,6 @@
 --]]
 
 return {
-    flash_focus = require(... .. ".flash_focus")
+    flash_focus = require(... .. ".flash_focus"),
+    tag_preview = require(... .. ".tag_preview")
 }
