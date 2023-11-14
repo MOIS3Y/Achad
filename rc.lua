@@ -31,3 +31,4 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "ui/theme/init.lua")
 require "core"
 require "extensions"
 require "notifications"
+require "ui.widgets.popups"

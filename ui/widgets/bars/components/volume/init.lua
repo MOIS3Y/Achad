@@ -1,6 +1,5 @@
 -- █░█ █▀█ █░░ █░█ █▀▄▀█ █▀▀ ▀
 -- ▀▄▀ █▄█ █▄▄ █▄█ █░▀░█ ██▄ ▄
--- -- -- -- -- -- -- -- -- -- 
 
 -- Imports:
 local awful     = require "awful"
@@ -8,7 +7,6 @@ local beautiful = require "beautiful"
 local gears     = require "gears"
 local wibox     = require "wibox"
 
-local color     = require "ui.theme.color"
 local pactl     = require "utils.pactl"
 
 
@@ -60,45 +58,38 @@ local volume_btn = awful.widget.watch(
   "pactl get-sink-mute @DEFAULT_SINK@",
   1,
   function(widget, stdout)
-    if string.find(stdout, "yes") then
-      widget:get_children_by_id("volume_value")[1]:set_text("Mute")
-      widget:get_children_by_id("volume_icon")[1]:set_text("󰝟 ")  -- nf-md-volume_mute
+    local volume_value = widget:get_children_by_id("volume_value")[1]
+    local volume_icon  = widget:get_children_by_id("volume_icon")[1]
+    -- Check mute status:
+    if pactl.is_mute(stdout) then
       widget:set_bg(mute_color)
-    else
-      awful.spawn.easy_async(
-        "pactl get-sink-volume @DEFAULT_SINK@",
-        function (out)
-          -- Init vars:
-          local current_vol
-          local volsum, volcnt = 0, 0
-          -- Get current volume:
-          for vol in string.gmatch(out, "(%d?%d?%d)%%") do
-            if vol ~= nil then
-              volsum = volsum + tonumber(vol)
-              volcnt = volcnt + 1
-            end
-          end
-          if volcnt == 0 then
-            widget:set_bg(error_color)
-            widget:get_children_by_id("volume_value")[1]:set_text("ERROR")
-            widget:get_children_by_id("volume_icon")[1]:set_text("󰖁 ")  -- nf-md-volume_mute
-            return nil
-          end
-          -- Count current volume:
-          current_vol = volsum / volcnt
-          -- Set volume value bg color and icon:
-          widget:set_bg(bg_color)
-          widget:get_children_by_id("volume_value")[1]:set_text(current_vol)
-          if current_vol >= 60 then
-            widget:get_children_by_id("volume_icon")[1]:set_text("󰕾 ")  -- nf-md-volume_high
-          elseif current_vol > 60 or current_vol >= 30 then
-            widget:get_children_by_id("volume_icon")[1]:set_text("󰖀 ")  -- nf-md-volume_medium
-          else
-            widget:get_children_by_id("volume_icon")[1]:set_text("󰕿 ")  -- nf-md-volume_low
-          end
-        end
-      )
+      volume_value:set_text("Mute")
+      volume_icon:set_text("󰝟 ")  -- nf-md-volume_mute
+      return nil
     end
+    awful.spawn.easy_async(
+      "pactl get-sink-volume @DEFAULT_SINK@",
+      function (out)
+        -- Get current volume or show error label:
+        local current_volume = pactl.parse_current_volume(out)
+        if not current_volume then
+          widget:set_bg(error_color)
+          volume_value:set_text("ERROR")
+          volume_icon:set_text("󰖁 ")  -- nf-md-volume_mute
+          return nil
+        end
+        -- Set volume value bg color and icon:
+        widget:set_bg(bg_color)
+        volume_value:set_text(current_volume)
+        if current_volume >= 60 then
+          volume_icon:set_text("󰕾 ")  -- nf-md-volume_high
+        elseif current_volume < 60 and current_volume >= 30 then
+          volume_icon:set_text("󰖀 ")  -- nf-md-volume_medium
+        else
+          volume_icon:set_text("󰕿 ")  -- nf-md-volume_low
+        end
+      end
+    )
   end,
   volume_level  -- watch func will be modify this widget
 )
@@ -116,13 +107,13 @@ volume_btn:buttons(
     awful.button(
       {}, 4,
       function ()
-        pactl.volume_level_set("sink", "@DEFAULT_SINK@", "+", 5)
+        pactl.volume_level_set("sink", "@DEFAULT_SINK@", "+", 5, "popup")
       end
     ),
     awful.button(
       {}, 5,
       function ()
-        pactl.volume_level_set("sink", "@DEFAULT_SINK@", "-", 5)
+        pactl.volume_level_set("sink", "@DEFAULT_SINK@", "-", 5, "popup")
       end
     )
   )

@@ -11,5 +11,6 @@ return {
   hotkeys             = "Ubuntu Regular 10",
   hotkeys_description = "Ubuntu Regular 10",
   powermenu           = "Ubuntu Regular 11",
-  naughty             = "Ubuntu Regular 10"
+  naughty             = "Ubuntu Regular 10",
+  volume_osd          = "Ubuntu Regular 11"
 }

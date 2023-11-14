@@ -14,7 +14,7 @@ return gears.table.join(
   awful.key(
     { }, "XF86AudioRaiseVolume",
     function ()
-      pactl.volume_level_set("sink", "@DEFAULT_SINK@", "+", 5)
+      pactl.volume_level_set("sink", "@DEFAULT_SINK@", "+", 5, "popup")
     end,
     {
       description = "Volume raise",
@@ -24,7 +24,7 @@ return gears.table.join(
   awful.key(
     { }, "XF86AudioLowerVolume",
     function ()
-      pactl.volume_level_set("sink", "@DEFAULT_SINK@", "-", 5)
+      pactl.volume_level_set("sink", "@DEFAULT_SINK@", "-", 5, "popup")
     end,
     {
       description = "Volume lower",
