@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="60"
+   height="60"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="#ECEFF4"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="feather feather-sun"
+   version="1.1"
+   id="svg5597"
+   sodipodi:docname="sun.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5601" />
+  <sodipodi:namedview
+     id="namedview5599"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="true"
+     inkscape:zoom="10.300189"
+     inkscape:cx="4.6601088"
+     inkscape:cy="28.494623"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5597">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5731" />
+  </sodipodi:namedview>
+  <g
+     id="g5729"
+     transform="matrix(0.49711686,0,0,0.49711686,6.0503077,6.047034)">
+    <circle
+       cx="12"
+       cy="12"
+       r="5"
+       id="circle5579" />
+    <line
+       x1="12"
+       y1="1"
+       x2="12"
+       y2="3"
+       id="line5581" />
+    <line
+       x1="12"
+       y1="21"
+       x2="12"
+       y2="23"
+       id="line5583" />
+    <line
+       x1="4.2199998"
+       y1="4.2199998"
+       x2="5.6399999"
+       y2="5.6399999"
+       id="line5585" />
+    <line
+       x1="18.360001"
+       y1="18.360001"
+       x2="19.780001"
+       y2="19.780001"
+       id="line5587" />
+    <line
+       x1="1"
+       y1="12"
+       x2="3"
+       y2="12"
+       id="line5589" />
+    <line
+       x1="21"
+       y1="12"
+       x2="23"
+       y2="12"
+       id="line5591" />
+    <line
+       x1="4.2199998"
+       y1="19.780001"
+       x2="5.6399999"
+       y2="18.360001"
+       id="line5593" />
+    <line
+       x1="18.360001"
+       y1="5.6399999"
+       x2="19.780001"
+       y2="4.2199998"
+       id="line5595" />
+  </g>
+</svg>

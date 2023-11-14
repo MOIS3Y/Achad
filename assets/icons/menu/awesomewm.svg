@@ -1,1 +1,61 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>awesomeWM</title><path d="M0 24V8.25h16.5V7.5H0V0h24v24h-7.5v-8.25h-9v.75h8.25V24z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   role="img"
+   viewBox="0 0 60 60"
+   version="1.1"
+   id="svg1395"
+   sodipodi:docname="awesomewm.svg"
+   width="60"
+   height="60"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1399" />
+  <sodipodi:namedview
+     id="namedview1397"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="true"
+     inkscape:zoom="12.875236"
+     inkscape:cx="19.300617"
+     inkscape:cy="30.873221"
+     inkscape:window-width="1915"
+     inkscape:window-height="999"
+     inkscape:window-x="2"
+     inkscape:window-y="41"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1395">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1518"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <title
+     id="title1391">awesomeWM</title>
+  <path
+     d="m 15.061212,44.941645 -0.01857,-17.95055 20.581655,-0.04927 -0.05899,-2.504279 H 15.061212 v -9.320044 h 29.824139 v 29.824139 h -9.320044 l -0.01321,-10.349542 -11.153517,-0.02643 0.002,2.437406 8.59391,0.0083 -0.01576,7.922966 z"
+     id="path1393"
+     style="fill:#ffffff;stroke-width:1.24268"
+     sodipodi:nodetypes="ccccccccccccccc" />
+  <metadata
+     id="metadata2074">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>awesomeWM</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

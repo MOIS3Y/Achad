@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="60"
+   height="60"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="#ECEFF4"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="feather feather-log-out"
+   version="1.1"
+   id="svg2543"
+   sodipodi:docname="log-out.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2547" />
+  <sodipodi:namedview
+     id="namedview2545"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="true"
+     inkscape:zoom="10.300189"
+     inkscape:cx="13.786155"
+     inkscape:cy="36.455643"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2543">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2671" />
+  </sodipodi:namedview>
+  <g
+     id="g2669"
+     transform="matrix(0.59610156,0,0,0.59610156,4.8444043,4.859876)">
+    <path
+       d="M 9,21 H 5 A 2,2 0 0 1 3,19 V 5 A 2,2 0 0 1 5,3 h 4"
+       id="path2537" />
+    <polyline
+       points="16 17 21 12 16 7"
+       id="polyline2539" />
+    <line
+       x1="21"
+       y1="12"
+       x2="9"
+       y2="12"
+       id="line2541" />
+  </g>
+</svg>

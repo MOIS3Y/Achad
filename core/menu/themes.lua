@@ -2,7 +2,13 @@
 -- ░█░ █▀█ ██▄ █░▀░█ ██▄ ▄█ ▄
 
 -- Imports:
+local awful   = require "awful"
+local gears   = require "gears"
 local spawn = require "awful.spawn"
+
+local apps    = require "apps"
+local color   = require "ui.theme.color"
+local paths   = require "ui.theme.path"
 
 
 -- Async restart awesome may be modified in the future:
@@ -14,6 +20,19 @@ end
 
 -- Init file stored current runtime theme:
 local runtime_tmp_file = "/tmp/achad_runtime_theme.conf"
+
+
+local gcrci   = gears.color.recolor_image  -- recolor images func
+
+-- Set icon dir:
+local icon_dir = paths.icons .. "menu/"
+
+-- Init icons:
+local icon_color = color.scheme.base0D
+
+local dark_icon   = gcrci(icon_dir .. "moon.svg",          icon_color)
+local light_icon  = gcrci(icon_dir .. "sun.svg",           icon_color)
+local scheme_icon = gcrci(icon_dir .. "color_palette.svg", icon_color)
 
 
 -- Register themes menu:
@@ -31,7 +50,8 @@ return {
             "echo aquarium > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "ashes",
@@ -40,7 +60,8 @@ return {
             "echo ashes > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "ayu dark",
@@ -49,7 +70,8 @@ return {
             "echo ayu_dark > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "bearded arc",
@@ -58,7 +80,8 @@ return {
             "echo bearded_arc > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "catppuccin frappe",
@@ -67,7 +90,8 @@ return {
             "echo catppuccin_frappe > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "catppuccin macchiato",
@@ -76,7 +100,8 @@ return {
             "echo catppuccin_macchiato > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "catppuccin mocha",
@@ -85,7 +110,8 @@ return {
             "echo catppuccin_mocha > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "dracula",
@@ -94,7 +120,8 @@ return {
             "echo dracula > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "decay",
@@ -103,7 +130,8 @@ return {
             "echo decay > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "everblush",
@@ -112,7 +140,8 @@ return {
             "echo everblush > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "everforest dark",
@@ -121,7 +150,8 @@ return {
             "echo everforest_dark > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "falcon",
@@ -130,7 +160,8 @@ return {
             "echo falcon > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "gruvbox dark",
@@ -139,7 +170,8 @@ return {
             "echo gruvbox_dark > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "kanagawa",
@@ -148,7 +180,8 @@ return {
             "echo kanagawa > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "melange",
@@ -157,7 +190,8 @@ return {
             "echo melange > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "monokai",
@@ -166,7 +200,8 @@ return {
             "echo monokai > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "monochrome",
@@ -175,7 +210,8 @@ return {
             "echo monochrome > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "mountain",
@@ -184,7 +220,8 @@ return {
             "echo mountain > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "nord",
@@ -193,7 +230,8 @@ return {
             "echo nord > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "onedark",
@@ -202,7 +240,8 @@ return {
             "echo onedark > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "rosepine",
@@ -211,7 +250,8 @@ return {
             "echo rosepine > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "rosepine moon",
@@ -220,7 +260,8 @@ return {
             "echo rosepine_moon > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "rxyhn",
@@ -229,7 +270,8 @@ return {
             "echo rxyhn > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "solarized",
@@ -238,7 +280,8 @@ return {
             "echo solarized > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "sweetpastel",
@@ -247,7 +290,8 @@ return {
             "echo sweetpastel > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "tokyodark",
@@ -256,7 +300,8 @@ return {
             "echo tokyodark > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "tokyonight",
@@ -265,7 +310,8 @@ return {
             "echo tokyonight > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "yoru",
@@ -274,9 +320,10 @@ return {
             "echo yoru > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       }
-    }
+    }, dark_icon
   },
   {
     -- █▄─▄███▄─▄█─▄▄▄▄█─█─█─▄─▄─█
@@ -290,7 +337,8 @@ return {
             "echo ayu_light > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "blossom light",
@@ -299,7 +347,8 @@ return {
             "echo blossom_light > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "catppuccin latte",
@@ -308,7 +357,8 @@ return {
             "echo catppuccin_latte > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "everforest light",
@@ -317,7 +367,8 @@ return {
             "echo everforest_light > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "gruvbox light",
@@ -326,7 +377,8 @@ return {
             "echo gruvbox_light > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "onelight",
@@ -335,7 +387,8 @@ return {
             "echo onelight > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
       {
         "rosepine dawn",
@@ -344,8 +397,9 @@ return {
             "echo rosepine_dawn > " .. runtime_tmp_file,
             restart_awesome
           )
-        end
+        end,
+        scheme_icon
       },
-    }
+    }, light_icon
   }
 }
