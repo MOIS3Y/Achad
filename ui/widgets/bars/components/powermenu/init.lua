@@ -1,6 +1,5 @@
 -- █▀█ █▀█ █░█░█ █▀▀ █▀█ █▀▄▀█ █▀▀ █▄░█ █░█ ▀
 -- █▀▀ █▄█ ▀▄▀▄▀ ██▄ █▀▄ █░▀░█ ██▄ █░▀█ █▄█ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 --[[
   Origin:
@@ -109,7 +108,6 @@ for _, item in ipairs(menu_items) do
   row:connect_signal("mouse::leave", function(c) c:set_bg(beautiful.bg_normal) end)
 
 
-
   -- replace cusor arrow to hand:
   local old_cursor, old_wibox
   row:connect_signal("mouse::enter", function()
@@ -142,8 +140,11 @@ for _, item in ipairs(menu_items) do
     )
   table.insert(rows, row)
 end
+
+
 -- Init powermenu popup:
 popup:setup(rows)
+
 
 -- Init buttons:
 logout_menu_widget:buttons(

@@ -1,7 +1,11 @@
-local awful = require "awful"
+-- █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█ █▀▀ █▀█   █░█░█ █ █▀▄ █▀▀ █▀▀ ▀█▀ ▀
+-- █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█ ██▄ █▀▄   ▀▄▀▄▀ █ █▄▀ █▄█ ██▄ ░█░ ▄
+
+-- Imports:
+local awful     = require "awful"
 local beautiful = require "beautiful"
 
-local menu = require "core.menu"
+local menu      = require "core.menu"
 
 
 local _M = awful.widget.launcher(
