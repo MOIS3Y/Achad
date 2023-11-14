@@ -30,24 +30,28 @@
      inkscape:deskcolor="#505050"
      showgrid="true"
      inkscape:zoom="10.300189"
-     inkscape:cx="14.271583"
-     inkscape:cy="34.271217"
-     inkscape:window-width="1738"
-     inkscape:window-height="1008"
-     inkscape:window-x="66"
-     inkscape:window-y="17"
-     inkscape:window-maximized="0"
+     inkscape:cx="13.300727"
+     inkscape:cy="32.183875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg738">
     <inkscape:grid
        type="xygrid"
        id="grid861" />
   </sodipodi:namedview>
-  <polyline
-     points="13 17 18 12 13 7"
-     id="polyline734"
-     transform="matrix(0.8302039,0,0,0.8302039,2.059673,3.1092979)" />
-  <polyline
-     points="6 17 11 12 6 7"
-     id="polyline736"
-     transform="matrix(0.8302039,0,0,0.8302039,2.059673,3.1092979)" />
+  <g
+     id="g355"
+     transform="matrix(0.79830097,0,0,0.79830097,2.4679779,1.5810202)">
+    <polyline
+       points="13 17 18 12 13 7"
+       id="polyline734"
+       transform="matrix(0.8302039,0,0,0.8302039,2.059673,3.1092979)" />
+    <polyline
+       points="6 17 11 12 6 7"
+       id="polyline736"
+       transform="matrix(0.8302039,0,0,0.8302039,2.059673,3.1092979)" />
+  </g>
 </svg>
