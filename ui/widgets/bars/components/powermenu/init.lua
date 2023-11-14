@@ -88,6 +88,7 @@ for _, item in ipairs(menu_items) do
         {
           text = item.name,
           font = text_font,
+          forced_width = 80,
           widget = wibox.widget.textbox
         },
         spacing = 12,
@@ -103,7 +104,9 @@ for _, item in ipairs(menu_items) do
 
   -- higlight elements:
   row:connect_signal("mouse::enter", function(c) c:set_fg(beautiful.fg_focus) end)
+  row:connect_signal("mouse::enter", function(c) c:set_bg(color.scheme.base01) end)
   row:connect_signal("mouse::leave", function(c) c:set_fg(beautiful.fg_normal) end)
+  row:connect_signal("mouse::leave", function(c) c:set_bg(beautiful.bg_normal) end)
 
 
 
@@ -126,10 +129,17 @@ for _, item in ipairs(menu_items) do
 
 
   -- hide menu after press:
-  row:buttons(gears.table.join(awful.button({}, 1, function()
-    popup.visible = not popup.visible
-    item.command()
-  end)))
+  row:buttons(
+    gears.table.join(
+      awful.button(
+        {}, 1,
+        function()
+          popup.visible = not popup.visible
+          item.command()
+        end
+        )
+      )
+    )
   table.insert(rows, row)
 end
 -- Init powermenu popup:
@@ -138,15 +148,18 @@ popup:setup(rows)
 -- Init buttons:
 logout_menu_widget:buttons(
   gears.table.join(
-    awful.button({}, 1, function()
-      if popup.visible then
-        popup.visible = not popup.visible
-        logout_menu_widget:set_bg(pm_btn_bg_color)
-      else
-        popup:move_next_to(mouse.current_widget_geometry)
-        logout_menu_widget:set_bg(pm_btn_press)
+    awful.button(
+      {}, 1,
+      function()
+        if popup.visible then
+          popup.visible = not popup.visible
+          logout_menu_widget:set_bg(pm_btn_bg_color)
+        else
+          popup:move_next_to(mouse.current_widget_geometry)
+          logout_menu_widget:set_bg(pm_btn_press)
+        end
       end
-    end)
+    )
   )
 )
 
