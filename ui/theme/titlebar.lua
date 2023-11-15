@@ -50,8 +50,8 @@ return {
   -- Titlebar properties:
   titlebar_fg_normal = default_theme.fg_normal,
   titlebar_bg_normal = default_theme.bg_normal,
+  titlebar_fg_focus  = default_theme.fg_normal,
   titlebar_bg_focus  = default_theme.bg_normal,
-  titlebar_fg_focus  = default_theme.bg_normal,
   titlebar_fg        = default_theme.fg_normal,
   titlebar_bg        = default_theme.bg_normal,
   -- Close Button icons:
