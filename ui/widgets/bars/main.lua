@@ -2,11 +2,11 @@
 -- █░▀░█ █▀█ █ █░▀█   █▄█ █▀█ █▀▄ ▄
 
 -- Imports:
-local awful       = require "awful"
-local beautiful   = require "beautiful"
-local wibox       = require "wibox"
+local awful      = require "awful"
+local beautiful  = require "beautiful"
+local wibox      = require "wibox"
 
-local components  = require "ui.widgets.bars.components"
+local components = require "ui.widgets.bars.components"
 
 
 local dpi = beautiful.xresources.apply_dpi
@@ -17,7 +17,8 @@ local _M = {}
 _M.init = function (s)
   -- Bind widgets to each screen:
   s.layoutbox = components.layoutbox(s)
-  s.taglist = components.tagslist(s)
+  s.taglist   = components.tagslist(s)
+  s.tasklist  = components.tasklist(s)
     -- Create the wibox
   local bar = awful.wibar {
     position = "top",
@@ -49,8 +50,8 @@ _M.init = function (s)
         widget = wibox.container.margin
       },
       {
-        components.tasklist,
-        margins = dpi(4),
+        s.tasklist,
+        margins = dpi(5),
         widget = wibox.container.margin
       },
       layout = wibox.layout.fixed.horizontal
@@ -58,7 +59,7 @@ _M.init = function (s)
     -- -- -- -- -- Center widgets -- -- -- -- --
     {
       {
-        margins = dpi(45),
+        margins = dpi(5),
         widget = wibox.container.margin
       },
       layout = wibox.layout.align.horizontal
