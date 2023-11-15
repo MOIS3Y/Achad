@@ -70,10 +70,10 @@ local slider_osd = wibox.widget({
 		bar_height          = dpi(24),
 		bar_color           = bar_color,
 		handle_color        = handle_color,
-    handle_border_color = handle_border_color,
+        handle_border_color = handle_border_color,
 		handle_shape        = gears.shape.circle,
 		handle_width        = dpi(24),
-    handle_border_width = dpi(1),
+        handle_border_width = dpi(1),
 		maximum             = 100,
 		widget = wibox.widget.slider,
 	},
@@ -88,9 +88,9 @@ local micro_osd_slider = slider_osd.micro_osd_slider
 
 micro_osd_slider:connect_signal("property::value", function()
 	local volume_level = micro_osd_slider:get_value()
-  awful.spawn(
+    awful.spawn(
     "pactl set-source-volume " .. "@DEFAULT_SOURCE@ " .. volume_level .. "%", false
-  )
+    )
 
 	-- Update textbox widget text
 	osd_value.text = volume_level .. "%"
@@ -165,7 +165,7 @@ awful.screen.connect_for_each_screen(function(s)
 						layout = wibox.layout.fixed.vertical,
 					},
 				},
-        left   = dpi(24),
+                left   = dpi(24),
 				right  = dpi(24),
 				widget = wibox.container.margin,
 			},
