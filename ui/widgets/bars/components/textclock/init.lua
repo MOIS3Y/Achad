@@ -2,6 +2,7 @@
 -- ░█░ ██▄ █░█ ░█░ █▄▄ █▄▄ █▄█ █▄▄ █░█ ▄
 
 -- Imports:
+local awful     = require "awful"
 local beautiful = require "beautiful"
 local gears     = require "gears"
 local wibox     = require "wibox"
@@ -81,6 +82,17 @@ local clock_btn = wibox.widget {
   end,
   widget = wibox.container.background
 }
+
+calendar_btn:buttons(
+  gears.table.join(
+    awful.button(
+      {}, 1,
+      function()
+        awesome.emit_signal("module::calendar_widget:toggle", true)
+      end
+    )
+  )
+)
 
 
 return {
