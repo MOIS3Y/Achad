@@ -2,10 +2,13 @@
 -- ░█░ █▀█ █▄█   █▄▄ █ ▄█ ░█░ ▄
 
 -- Imports:
-local awful       = require "awful"
-local wibox       = require "wibox"
+local awful   = require "awful"
+local wibox   = require "wibox"
 
-local buttons     = require "core.keybindings.buttons"
+local buttons = require "core.keybindings.buttons"
+local font    = require "ui.theme.font"
+
+local taglist_font = font.taglist
 
 
 -- Create a taglist widget
@@ -19,6 +22,7 @@ local function taglist(s)
         {
           {
             id     = 'text_role',
+            font   = taglist_font,
             widget = wibox.widget.textbox,
           },
           layout = wibox.layout.fixed.horizontal,
