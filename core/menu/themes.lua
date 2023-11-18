@@ -2,25 +2,31 @@
 -- ░█░ █▀█ ██▄ █░▀░█ ██▄ ▄█ ▄
 
 -- Imports:
-local awful   = require "awful"
 local gears   = require "gears"
-local spawn = require "awful.spawn"
 
-local apps    = require "apps"
 local color   = require "ui.theme.color"
+local json    = require "modules.json"
 local paths   = require "ui.theme.path"
 
 
--- Async restart awesome may be modified in the future:
-local function restart_awesome(stdout, stderr, exitreason, exitcode)
-  if exitcode == 0 then
-    awesome.restart()
-  end
+local function restart_awesome(color_scheme)
+  -- Parse runtime config file:
+  local file = io.open(ACHAD_RUNTIME_FILE, "rb")
+  if not file then return nil end
+  local content = file:read("*a")
+  file:close()
+  local config = json.decode(content)
+  config.theme.color_scheme = color_scheme
+  config = json.encode(config)
+  -- Save new theme to runtime config:
+  file = io.open(ACHAD_RUNTIME_FILE, "wb")
+  if not file then return nil end
+  file:write(config)
+  file:close()
+  -- add more logic here ...
+  -- Finaly restart awesome:
+  awesome.restart()
 end
-
--- Init file stored current runtime theme:
-local runtime_tmp_file = "/tmp/achad_runtime_theme.conf"
-
 
 local gcrci   = gears.color.recolor_image  -- recolor images func
 
@@ -45,282 +51,141 @@ return {
     "Dark", {
       {
         "aquarium",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo aquarium > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("aquarium") end,
         scheme_icon
       },
-      {
-        "ashes",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo ashes > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+      { "ashes",
+        function () restart_awesome("ashes") end,
         scheme_icon
       },
       {
         "ayu dark",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo ayu_dark > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("ayu_dark") end,
         scheme_icon
       },
       {
         "bearded arc",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo bearded_arc > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("bearded_arc")end,
         scheme_icon
       },
       {
         "catppuccin frappe",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo catppuccin_frappe > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("catppuccin_frappe") end,
         scheme_icon
       },
       {
         "catppuccin macchiato",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo catppuccin_macchiato > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("catppuccin_macchiato") end,
         scheme_icon
       },
       {
         "catppuccin mocha",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo catppuccin_mocha > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("catppuccin_mocha") end,
         scheme_icon
       },
       {
         "dracula",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo dracula > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("dracula") end,
         scheme_icon
       },
       {
         "decay",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo decay > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("decay") end,
         scheme_icon
       },
       {
         "everblush",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo everblush > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("everblush") end,
         scheme_icon
       },
       {
         "everforest dark",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo everforest_dark > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("everforest_dark") end,
         scheme_icon
       },
       {
         "falcon",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo falcon > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("falcon") end,
         scheme_icon
       },
       {
         "gruvbox dark",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo gruvbox_dark > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("gruvbox_dark") end,
         scheme_icon
       },
       {
         "kanagawa",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo kanagawa > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("kanagawa") end,
         scheme_icon
       },
       {
         "melange",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo melange > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("melange") end,
         scheme_icon
       },
       {
         "monokai",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo monokai > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("monokai") end,
         scheme_icon
       },
       {
         "monochrome",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo monochrome > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("monochrome") end,
         scheme_icon
       },
       {
         "mountain",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo mountain > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("mountain") end,
         scheme_icon
       },
       {
         "nord",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo nord > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("nord") end,
         scheme_icon
       },
       {
         "onedark",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo onedark > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("onedark") end,
         scheme_icon
       },
       {
         "rosepine",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo rosepine > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("rosepine") end,
         scheme_icon
       },
       {
         "rosepine moon",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo rosepine_moon > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("rosepine_moon") end,
         scheme_icon
       },
       {
         "rxyhn",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo rxyhn > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("rxyhn") end,
         scheme_icon
       },
       {
         "solarized",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo solarized > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("solarized") end,
         scheme_icon
       },
       {
         "sweetpastel",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo sweetpastel > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("sweetpastel") end,
         scheme_icon
       },
       {
         "tokyodark",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo tokyodark > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("tokyodark") end,
         scheme_icon
       },
       {
         "tokyonight",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo tokyonight > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("tokyonight") end,
         scheme_icon
       },
       {
         "yoru",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo yoru > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("yoru") end,
         scheme_icon
       }
     }, dark_icon
@@ -332,74 +197,39 @@ return {
     "Light", {
       {
         "ayu light",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo ayu_light > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("ayu_light") end,
         scheme_icon
       },
       {
         "blossom light",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo blossom_light > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("blossom_light") end,
         scheme_icon
       },
       {
         "catppuccin latte",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo catppuccin_latte > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("catppuccin_latte") end,
         scheme_icon
       },
       {
         "everforest light",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo everforest_light > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("everforest_light") end,
         scheme_icon
       },
       {
         "gruvbox light",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo gruvbox_light > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("gruvbox_light") end,
         scheme_icon
       },
       {
         "onelight",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo onelight > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("onelight") end,
         scheme_icon
       },
       {
         "rosepine dawn",
-        function ()
-          spawn.easy_async_with_shell(
-            "echo rosepine_dawn > " .. runtime_tmp_file,
-            restart_awesome
-          )
-        end,
+        function () restart_awesome("rosepine_dawn") end,
         scheme_icon
-      },
+      }
     }, light_icon
   }
 }

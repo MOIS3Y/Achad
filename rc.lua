@@ -16,7 +16,7 @@ local gears     = require "gears"
 -- Realtime error handler:
 require "core.error_handler"
 
--- Require top:
+-- Init global environment variables from env or runtime, require top:
 require "environment"
 
 -- When loaded, this module makes sure that there's always a client
