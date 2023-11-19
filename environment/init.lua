@@ -53,11 +53,13 @@ local function set_default_runtime_conf()
   local file = io.open(runtime_file, "wb")
   assert(file, "ERROR when trying to open " .. runtime_file .. "in wb mode")
   file:write(
-      json.encode({
-      device = "computer",
+    json.encode({
+      device = "pc",
       os = "nixos",
       theme  = {
         color_scheme = "catppuccin_mocha",
+        icon_theme = "Papirus",
+        os_logo = path.icons .. "logo/" .. "awesomewm.svg",
         wallpaper = {
           auto = true,
           file = path.images .. "wallpapers/" .. "catppuccin_mocha.png"
@@ -121,8 +123,59 @@ local function init_theme_wallpaper(runtime_file)
 end
 
 
+local function init_theme_os_logo(runtime_file)
+  local icon_path = path.icons
+  -- Init reserve default vslue:
+  local default = icon_path .. "logo/" .. "awesomewm.svg"
+  local runtime = default
+  -- Return value from environ:
+  local environ = os.getenv("ACHAD_OS_LOGO")
+  if environ and type(environ) == "string" then
+    if gfs.file_readable(environ) then
+      return environ
+    end
+    return runtime
+  end
+  -- Return value from runtime:
+  local config = read_file(runtime_file)
+  if not config then
+    return runtime
+  end
+  config = json.decode(config)
+  runtime = config.theme.os_logo
+  if gfs.file_readable(runtime) then
+    return runtime
+  else
+    return default
+  end
+end
+
+
+local function init_theme_icon(runtime_file)
+  -- Init reserve default vslue:
+  local default = "Papirus"
+  local runtime = default
+  -- Return value from environ:
+  local environ = os.getenv("ACHAD_ICON_THEME")
+  if environ then
+    return environ
+  end
+  -- Return value from runtime:
+  local config = read_file(runtime_file)
+  if not config then
+    return runtime
+  end
+  config = json.decode(config)
+  runtime = config.theme.icon_theme
+  return runtime
+end
+
+
 -- -- -- -- -- GLOBAL ENVIRONMENT VARIABLES -- -- -- -- --
 
 ACHAD_RUNTIME_FILE = set_default_runtime_conf()
+
 ACHAD_THEME        = init_theme(ACHAD_RUNTIME_FILE)
 ACHAD_WALLPAPER    = init_theme_wallpaper(ACHAD_RUNTIME_FILE)
+ACHAD_ICON_THEME   = init_theme_icon(ACHAD_RUNTIME_FILE)
+ACHAD_OS_LOGO      = init_theme_os_logo(ACHAD_RUNTIME_FILE)

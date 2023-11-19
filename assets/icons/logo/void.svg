@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="512"
+   width="512"
+   version="1.1"
+   id="svg1016"
+   sodipodi:docname="void.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1020" />
+  <sodipodi:namedview
+     id="namedview1018"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="1.2070534"
+     inkscape:cx="104.38644"
+     inkscape:cy="225.75638"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1016" />
+  <g
+     transform="matrix(2.3704376 0 0 2.3704376 -47.85329 6.519184)"
+     id="g1014">
+    <path
+       d="m128.01682 0c-22.03188.04678314-43.493448 7.0072685-61.359063 19.900168l23.902685 23.902684c11.277448-6.898594 24.236288-10.559734 37.456378-10.582214 39.77241-.000079 72.01434 32.241846 72.01426 72.014262-.0318 13.21538-3.69956 26.16719-10.60151 37.43708l23.94799 23.94799c12.8888-17.87595 19.8404-39.34715 19.87417-61.38507 0-58.119626-47.11529-105.2349-105.23491-105.2349z"
+       id="path1008" />
+    <path
+       d="m189.37588 190.56963-23.90269-23.90268c-11.27745 6.89859-24.23629 10.55974-37.45637 10.58221-39.772417.00008-72.014343-32.24185-72.014264-72.01426.03183-13.215382 3.699547-26.167196 10.60151-37.437081l-23.947999-23.947987c-12.888817 17.875937-19.840381 39.347145-19.874149 61.385068 0 58.11962 47.115274 105.2349 105.234902 105.2349 22.03188-.0468 43.49344-7.00726 61.35906-19.90017z"
+       id="path1010" />
+    <circle
+       cx="128"
+       cy="105.2349"
+       r="33.503357"
+       id="circle1012" />
+  </g>
+</svg>

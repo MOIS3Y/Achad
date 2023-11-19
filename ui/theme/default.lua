@@ -2,15 +2,24 @@
 -- █▄▀ ██▄ █▀░ █▀█ █▄█ █▄▄ ░█░ ▄
 
 -- Imports:
+local gears      = require "gears"
 local xresources = require "beautiful.xresources"
 
 local color      = require "ui.theme.color"
 local path       = require "ui.theme.path"
 local font       = require "ui.theme.font"
 
+
+-- Recolor images func shourtcut: 
+local gcrci = gears.color.recolor_image
+
+
 -- Init vars:
 local icon_path  = path.icons
 local dpi        = xresources.apply_dpi
+
+local os_logo    = gcrci(ACHAD_OS_LOGO, color.scheme.base0D)
+local icon_theme = ACHAD_ICON_THEME
 
 -- load from ~/.Xresources:
 -- theme.color0  = "#1e1e2e"
@@ -52,7 +61,7 @@ return {
   useless_gap   = dpi(4),
   border_width  = dpi(1),
   -- Icon theme:
-  icon_theme    = "Papirus",
+  icon_theme    = icon_theme,
   -- OS logo:
-  os_logo       = icon_path .. "logo/os.png"
+  os_logo       = os_logo
 }
