@@ -49,9 +49,7 @@ function _M.init_runtime_file()
 end
 
 
-function _M.set_default_runtime_conf()
-  -- Get runtime file:
-  local runtime_file = _M.init_runtime_file()
+function _M.set_default_runtime_conf(runtime_file)
   -- Do not set default value if runtime file exists:
   if gfs.file_readable(runtime_file) then return runtime_file end
   -- Set default config values if runtime file does not exist:
@@ -61,52 +59,38 @@ function _M.set_default_runtime_conf()
     json.encode(conf)  -- from runtime.lua module
   )
   file:close()
-  return runtime_file
 end
 
 
-function _M.init_theme(runtime_file)
+function _M.init_theme(runtime_config)
   -- Init reserve default value:
-  local default = "catppuccin_mocha"
+  local default = conf.theme.color_scheme
   local environ = os.getenv("ACHAD_THEME")
   -- Return value from environ:
-  if environ then
-    return environ
-  end
+  if environ then return environ end
   -- Return value from runtime:
-  local config = _M.read_file(runtime_file)
-  if not config then
-    return default
-  end
-  config = json.decode(config)
-  local runtime = config.theme.color_scheme
-  return runtime
+  if not runtime_config then return default end
+  return runtime_config.theme.color_scheme
 end
 
 
-function _M.init_theme_wallpaper(runtime_file)
+function _M.init_theme_wallpaper(runtime_config)
   local wallpaper_path = path.images .. "wallpapers/"
   -- Init reserve default vslue:
-  local default = wallpaper_path .. "catppuccin_mocha.png"
+  local default = conf.theme.wallpaper.file
   local runtime = default
   -- Return value from environ:
   local environ = os.getenv("ACHAD_WALLPAPER")
   if environ and type(environ) == "string" then
-    if gfs.file_readable(environ) then
-      return environ
-    end
+    if gfs.file_readable(environ) then return environ end
     return runtime
   end
   -- Return value from runtime:
-  local config = _M.read_file(runtime_file)
-  if not config then
-    return runtime
-  end
-  config = json.decode(config)
-  if config.theme.wallpaper.auto then
-    runtime = wallpaper_path .. config.theme.color_scheme .. ".png"
+  if not runtime_config then return runtime end
+  if runtime_config.theme.wallpaper.auto then
+    runtime = wallpaper_path .. runtime_config.theme.color_scheme .. ".png"
   else
-    runtime = config.theme.wallpaper.file
+    runtime = runtime_config.theme.wallpaper.file
   end
   if gfs.file_readable(runtime) then
     return runtime
@@ -116,26 +100,19 @@ function _M.init_theme_wallpaper(runtime_file)
 end
 
 
-function _M.init_theme_os_logo(runtime_file)
-  local icon_path = path.icons
+function _M.init_theme_os_logo(runtime_config)
   -- Init reserve default vslue:
-  local default = icon_path .. "logo/" .. "awesomewm.svg"
+  local default = conf.theme.os_logo
   local runtime = default
   -- Return value from environ:
   local environ = os.getenv("ACHAD_OS_LOGO")
   if environ and type(environ) == "string" then
-    if gfs.file_readable(environ) then
-      return environ
-    end
+    if gfs.file_readable(environ) then return environ end
     return runtime
   end
   -- Return value from runtime:
-  local config = _M.read_file(runtime_file)
-  if not config then
-    return runtime
-  end
-  config = json.decode(config)
-  runtime = config.theme.os_logo
+  if not runtime_config then return runtime end
+  runtime = runtime_config.theme.os_logo
   if gfs.file_readable(runtime) then
     return runtime
   else
@@ -144,23 +121,24 @@ function _M.init_theme_os_logo(runtime_file)
 end
 
 
-function _M.init_theme_icon(runtime_file)
+function _M.init_theme_icon(runtime_config)
   -- Init reserve default vslue:
-  local default = "Papirus"
+  local default = conf.theme.icon_theme
   local runtime = default
   -- Return value from environ:
   local environ = os.getenv("ACHAD_ICON_THEME")
-  if environ then
-    return environ
-  end
+  if environ then return environ end
   -- Return value from runtime:
-  local config = _M.read_file(runtime_file)
-  if not config then
-    return runtime
-  end
-  config = json.decode(config)
-  runtime = config.theme.icon_theme
+  if not runtime_config then return runtime end
+  runtime = runtime_config.theme.icon_theme
   return runtime
+end
+
+
+function _M.init_default_apps(runtime_config)
+  local default = conf.apps
+  if not runtime_config then return default end
+  return runtime_config.apps
 end
 
 

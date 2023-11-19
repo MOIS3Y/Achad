@@ -17,6 +17,28 @@ local default = {
       auto = true,
       file = path.images .. "wallpapers/" .. "catppuccin_mocha.png"
     }
+  },
+  apps = {
+    cli = {
+      terminal = "wezterm",
+      editor = "hx",
+      explorer = "lf"
+    },
+    gui = {
+      browser = "firefox",
+      editor = "code",
+      screenshot = "flameshot gui"
+    },
+    launcher = {
+      default = "rofi -show drun"
+    },
+    power = {
+      lock      = "i3lock-run",
+      hibernate = "systemctl hibernate",
+      reboot    = "reboot",
+      suspend   = "systemctl suspend",
+      shutdown  = "shutdown now"
+    }
   }
 }
 

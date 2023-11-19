@@ -1,10 +1,11 @@
 -- █▀▀ █░░ █   ▄▀█ █▀█ █▀█ █▀ ▀
 -- █▄▄ █▄▄ █   █▀█ █▀▀ █▀▀ ▄█ ▄
 
--- Init commands:
-local terminal = "wezterm"
-local editor   = terminal .. " -e " .. (os.getenv("EDITOR") or "hx")
-local explorer = terminal .. " -e " .. "lf"
+-- Init apps:
+local terminal = ACHAD_APPS.cli.terminal
+local editor   = terminal .. " -e " .. (os.getenv("EDITOR") or ACHAD_APPS.cli.editor)
+local explorer = terminal .. " -e " .. ACHAD_APPS.cli.explorer
+
 
 -- Register cli apps:
 return {

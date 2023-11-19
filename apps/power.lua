@@ -5,12 +5,18 @@
 local awful = require "awful"
 
 
+-- Init lock command:
+local lock = ACHAD_APPS.power.lock
+if lock == "i3lock-run" then
+  lock = lock .. " --scheme " .. ACHAD_THEME
+end
+
+
 -- Init power command:
-local lock      = "i3lock-run"
-local suspend   = "systemctl suspend"
-local hibernate = "systemctl hibernate"
-local reboot    = "reboot"
-local shutdown  = "shutdown now"
+local suspend   = ACHAD_APPS.power.suspend
+local hibernate = ACHAD_APPS.power.hibernate
+local reboot    = ACHAD_APPS.power.reboot
+local shutdown  = ACHAD_APPS.power.shutdown
 
 
 -- Register command:
