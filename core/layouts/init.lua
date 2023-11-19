@@ -1,6 +1,10 @@
+-- █░░ ▄▀█ █▄█ █▀█ █░█ ▀█▀ █▀ ▀
+-- █▄▄ █▀█ ░█░ █▄█ █▄█ ░█░ ▄█ ▄
+
+-- Imports:
 local awful = require "awful"
 
-
+-- Register layouts:
 awful.layout.layouts = {
   awful.layout.suit.floating,
   awful.layout.suit.tile,

@@ -1,7 +1,7 @@
 -- █▀▀ █▀█ █▀█ █▀█ █▀█  █░█ █▀▀ ▄▀█ █▄░█ █▀▄ █░░ █▀▀ █▀█ ▀
 -- ██▄ █▀▄ █▀▄ █▄█ █▀▄  █▀█ ██▄ █▀█ █░▀█ █▄▀ █▄▄ ██▄ █▀▄ ▄
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
+-- Imports:
 local naughty = require "naughty"
 
 -- Check if awesome encountered an error during startup and fell back to

@@ -1,10 +1,11 @@
 -- ▀█▀ ▄▀█ █▀▀ █▀   █░░ █ █▀ ▀█▀ ▀
 -- ░█░ █▀█ █▄█ ▄█   █▄▄ █ ▄█ ░█░ ▄
--- -- -- -- -- -- -- -- -- -- -- -
 
+-- Imports:
 local awful = require "awful"
 
 
+-- Init tags generator func:
 local generate_tags = function (s)  -- s as screen
   awful.tag.add(" 1 ", {
     index              = 1,
@@ -72,5 +73,5 @@ local generate_tags = function (s)  -- s as screen
   })
 end
 
-
+-- Register tags generator func:
 return generate_tags

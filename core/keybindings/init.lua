@@ -1,3 +1,7 @@
+-- █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀ ▀
+-- █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█ ▄
+
+-- Imports:
 local awful = require "awful"
 local gears = require "gears"
 
@@ -6,6 +10,7 @@ local keys = require "core.keybindings.keys"
 local menu = require "core.menu"
 
 
+-- Register all keys:
 root.keys(
   gears.table.join(
     keys.apps,
@@ -19,6 +24,7 @@ root.keys(
   )
 )
 
+-- Register root buttons:
 root.buttons(
   gears.table.join(
     awful.button(
