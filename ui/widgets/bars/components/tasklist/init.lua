@@ -118,7 +118,7 @@ local function tasklist (s)
       awful.button(
         {}, 3,
         function ()
-          awful.spawn(apps.launcher.rofi, false)
+          awful.spawn(apps.launcher.default, false)
         end
       )
     )

@@ -24,10 +24,10 @@ return gears.table.join(
   awful.key(
     {modkey}, "m",
     function ()
-      awful.spawn(apps.launcher.rofi)
+      awful.spawn(apps.launcher.default)
     end,
     {
-      description = "run rofi drun menu",
+      description = "run apps launcher",
       group = "launcher"
     }
   )

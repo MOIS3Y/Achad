@@ -3,5 +3,5 @@
 
 -- Register launchers:
 return {
-  ["rofi"] = "rofi -show drun"
+  ["default"] = "rofi -show drun"
 }

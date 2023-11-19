@@ -31,12 +31,12 @@ local awesome_icon   = gcrci(icon_dir .. "awesomewm.svg", icon_color)
 local menu = awful.menu(
   {
     items = {
-      { "Applications",   apps.launcher.rofi, apps_icon     },
-      { "Terminal",       apps.cli.terminal,  terminal_icon },
-      { "Browser",        apps.gui.browser,   browser_icon  },
-      { "Explorer",       apps.cli.explorer,  explorer_icon },
-      { "Editor",         apps.gui.editor,    editor_icon   },
-      { "Awesome WM",     awesome_menu,       awesome_icon  }
+      { "Applications",   apps.launcher.default, apps_icon     },
+      { "Terminal",       apps.cli.terminal,     terminal_icon },
+      { "Browser",        apps.gui.browser,      browser_icon  },
+      { "Explorer",       apps.cli.explorer,     explorer_icon },
+      { "Editor",         apps.gui.editor,       editor_icon   },
+      { "Awesome WM",     awesome_menu,          awesome_icon  }
     }
   }
 )
