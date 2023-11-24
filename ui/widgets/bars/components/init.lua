@@ -4,6 +4,7 @@
 
 return {
   cpu             = require "ui.widgets.bars.components.cpu",
+  battery         = require "ui.widgets.bars.components.battery",
   keyboard_layout = require "ui.widgets.bars.components.keyboard_layout",
   launcher        = require "ui.widgets.bars.components.launcher",
   layoutbox       = require "ui.widgets.bars.components.layoutbox",

@@ -63,8 +63,19 @@ local function tasklist (s)
       widget          = wibox.container.background,
       create_callback = function(self, c, index, objects) --luacheck: no unused
         self:get_children_by_id('clienticon')[1].client = c
+        local tooltip = awful.tooltip({
+          objects = { self },
+          timer_function = function()
+            return c.name
+          end,
+        })
+        tooltip.align = "left"
+        tooltip.mode = "outside"
+        tooltip.margins = 8
+        tooltip.preferred_positions = {"bottom"}
+        tooltip.preferred_alignments = {"middle"}
       end
-    }
+    },
   }
   local btn = wibox.widget {
     {

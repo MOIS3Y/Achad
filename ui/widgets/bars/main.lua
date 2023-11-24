@@ -11,6 +11,20 @@ local components = require "ui.widgets.bars.components"
 
 local dpi = beautiful.xresources.apply_dpi
 
+
+local function enable_extra_widget(widget, margin_value, check_value)
+  local bar_widget_template = {
+    widget,
+    margins = dpi(margin_value),
+    widget = wibox.container.margin
+  }
+  if check_value then
+    return bar_widget_template
+  end
+  return nil
+end
+
+
 local _M = {}
 
 
@@ -101,6 +115,7 @@ _M.init = function (s)
         margins = dpi(5),
         widget = wibox.container.margin
       },
+      enable_extra_widget(components.battery, 5, ACHAD_HARDWARE.battery.enable),
       {
         components.powermenu,
         margins = dpi(5),

@@ -88,7 +88,10 @@ function _M.init_theme_wallpaper(runtime_config)
   -- Return value from runtime:
   if not runtime_config then return runtime end
   if runtime_config.theme.wallpaper.auto then
-    runtime = wallpaper_path .. runtime_config.theme.color_scheme .. ".png"
+    runtime = wallpaper_path .. "presets/" ..
+      runtime_config.theme.wallpaper.preset ..
+      "/" ..
+      runtime_config.theme.color_scheme .. ".png"
   else
     runtime = runtime_config.theme.wallpaper.file
   end
@@ -139,6 +142,13 @@ function _M.init_default_apps(runtime_config)
   local default = conf.apps
   if not runtime_config then return default end
   return runtime_config.apps
+end
+
+
+function _M.init_hardware(runtime_config)
+  local default = conf.hardware
+  if not runtime_config then return default end
+  return runtime_config.hardware
 end
 
 

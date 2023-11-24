@@ -15,7 +15,8 @@ local default = {
     os_logo = path.icons .. "logo/" .. "awesomewm.svg",
     wallpaper = {
       auto = true,
-      file = path.images .. "wallpapers/" .. "catppuccin_mocha.png"
+      preset = "awesome",
+      file = path.images .. "wallpapers/presets/awesome/catppuccin_mocha.png"
     }
   },
   apps = {
@@ -38,6 +39,12 @@ local default = {
       reboot    = "reboot",
       suspend   = "systemctl suspend",
       shutdown  = "shutdown now"
+    }
+  },
+  hardware = {
+    battery = {
+      enable = false,
+      name = "BAT1"
     }
   }
 }
