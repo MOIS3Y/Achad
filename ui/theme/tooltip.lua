@@ -8,7 +8,7 @@ local color = require "ui.theme.color"
 local font  = require "ui.theme.font"
 
 return {
-  tooltip_align        = nil,
+  tooltip_align        = "bottom",
   tooltip_border_color = nil,
   tooltip_bg           = color.scheme.base00,
   tooltip_fg           = color.scheme.base05,
