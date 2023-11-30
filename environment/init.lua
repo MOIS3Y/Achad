@@ -14,7 +14,7 @@ initializers.set_default_runtime_conf(runtime_file)
 
 -- Parse config from runtime config file:
 local row_config   = initializers.read_file(runtime_file)  -- JSON str
-local runtime_conf = json.decode(row_config)               -- Lua table
+local runtime_conf = json.serializer.decode(row_config)    -- Lua table
 
 -- -- -- -- -- GLOBAL ENVIRONMENT VARIABLES -- -- -- -- --
 

@@ -15,9 +15,9 @@ local function restart_awesome(color_scheme)
   if not file then return nil end
   local content = file:read("*a")
   file:close()
-  local config = json.decode(content)
+  local config = json.serializer.decode(content)
   config.theme.color_scheme = color_scheme
-  config = json.encode(config)
+  config = json.prettier:pretty_print(config)
   -- Save new theme to runtime config:
   file = io.open(ACHAD_RUNTIME_FILE, "wb")
   if not file then return nil end

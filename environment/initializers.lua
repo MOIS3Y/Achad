@@ -55,9 +55,7 @@ function _M.set_default_runtime_conf(runtime_file)
   -- Set default config values if runtime file does not exist:
   local file = io.open(runtime_file, "wb")
   assert(file, "ERROR when trying to open " .. runtime_file .. "in wb mode")
-  file:write(
-    json.encode(conf)  -- from runtime.lua module
-  )
+  file:write(json.prettier:pretty_print(conf))  -- from runtime.lua module
   file:close()
 end
 
